@@ -10,7 +10,8 @@ const LOGO_DARK_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/
 
 const navLinks = [
   { label: "About", href: "#about" },
-  { label: "Services", href: "#pillars" },
+  { label: "Services", href: "#services" },
+  { label: "Our Difference", href: "#pillars" },
   { label: "How It Works", href: "#how-it-works" },
   { label: "Industries", href: "#industries" },
   { label: "Contact", href: "#contact" },
@@ -43,7 +44,7 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24">
           {/* Logo */}
           <a
             href="#"
@@ -56,7 +57,7 @@ export default function Navbar() {
             <img
               src={LOGO_DARK_URL}
               alt="EagleWing Facility Services"
-              className="h-14 sm:h-16 w-auto object-contain"
+              className="h-20 sm:h-24 w-auto object-contain"
             />
           </a>
 

@@ -9,10 +9,11 @@ const footerLinks = [
   {
     title: "Services",
     links: [
-      { label: "SmartClean\u2122", href: "#pillars" },
-      { label: "StrikeTeam\u2122", href: "#pillars" },
-      { label: "Dynamic Solutions", href: "#pillars" },
-      { label: "Innovation", href: "#pillars" },
+      { label: "Office Cleaning", href: "#services" },
+      { label: "Industrial Cleaning", href: "#services" },
+      { label: "School & Childcare", href: "#services" },
+      { label: "Medical Cleaning", href: "#services" },
+      { label: "Pressure Washing", href: "#services" },
     ],
   },
   {
@@ -58,7 +59,7 @@ export default function Footer() {
               <img
                 src={LOGO_DARK_URL}
                 alt="EagleWing Facility Services"
-                className="h-16 w-auto object-contain"
+                className="h-20 w-auto object-contain"
               />
             </button>
             <p className="text-sm text-white/30 font-body font-light leading-relaxed max-w-sm mb-6">

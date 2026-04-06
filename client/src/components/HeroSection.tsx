@@ -30,7 +30,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 carbon-pattern opacity-40" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-36 pb-24 w-full">
         <div className="max-w-3xl">
           {/* Micro label */}
           <motion.div
