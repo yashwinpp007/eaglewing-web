@@ -44,7 +44,7 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-24">
+        <div className="flex items-center justify-between h-28 sm:h-32">
           {/* Logo */}
           <a
             href="#"
@@ -57,7 +57,7 @@ export default function Navbar() {
             <img
               src={LOGO_DARK_URL}
               alt="EagleWing Facility Services"
-              className="h-20 sm:h-24 w-auto object-contain"
+              className="h-24 sm:h-28 lg:h-32 w-auto object-contain"
             />
           </a>
 

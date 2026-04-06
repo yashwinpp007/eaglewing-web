@@ -5,7 +5,7 @@
  */
 import { motion } from "framer-motion";
 
-const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/hero-bg-AKkFDGbCPWDCjNxwGrXuM7.webp";
+const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/hero-modern-equipment-NKnFLgEwFUcuTYusKt8KZv.webp";
 
 export default function HeroSection() {
   const scrollTo = (id: string) => {
@@ -30,7 +30,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 carbon-pattern opacity-40" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-36 pb-24 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-44 pb-24 w-full">
         <div className="max-w-3xl">
           {/* Micro label */}
           <motion.div
