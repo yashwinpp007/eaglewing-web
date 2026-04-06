@@ -103,8 +103,8 @@ export default function HeroSection() {
 
         {/* Content */}
         <div className="relative z-10 h-full flex items-center">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-40">
-            <div className="max-w-3xl">
+          <div className="w-full px-4 sm:px-6 lg:px-12 pt-40">
+            <div className="max-w-2xl">
               {/* Label */}
               <AnimatePresence mode="wait">
                 <motion.div
@@ -184,7 +184,7 @@ export default function HeroSection() {
 
         {/* Stats bar at bottom */}
         <div className="absolute bottom-0 left-0 right-0 z-10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+          <div className="px-4 sm:px-6 lg:px-12 pb-8">
             <div className="flex gap-8 sm:gap-12 pt-8 border-t border-white/10">
               {[
                 { value: "20+", label: "Years Experience" },
