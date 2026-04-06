@@ -1,18 +1,12 @@
-/*
- * DESIGN: Carbon Fiber Industrial Luxury
- * Home Page: Assembles all sections for the EagleWing Property Services website.
- * Dark matte black canvas, gold gradient accents, diagonal section transitions,
- * Bebas Neue display font, Outfit body font, Space Grotesk mono accents.
- */
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import ProblemSection from "@/components/ProblemSection";
-import SolutionSection from "@/components/SolutionSection";
+import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServicesSection";
+import SectorsSection from "@/components/SectorsSection";
 import PillarsSection from "@/components/PillarsSection";
-import HowItWorksSection from "@/components/HowItWorksSection";
-import IndustriesSection from "@/components/IndustriesSection";
-import TrustSection from "@/components/TrustSection";
+import TechnologySection from "@/components/TechnologySection";
+import ProcessSection from "@/components/ProcessSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
@@ -21,13 +15,13 @@ export default function Home() {
     <div className="min-h-screen bg-[#0A0A0A] text-white overflow-x-hidden">
       <Navbar />
       <HeroSection />
-      <ProblemSection />
-      <SolutionSection />
+      <AboutSection />
       <ServicesSection />
+      <SectorsSection />
       <PillarsSection />
-      <HowItWorksSection />
-      <IndustriesSection />
-      <TrustSection />
+      <TechnologySection />
+      <ProcessSection />
+      <TestimonialsSection />
       <CTASection />
       <Footer />
     </div>

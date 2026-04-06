@@ -1,109 +1,176 @@
-/*
- * DESIGN: Carbon Fiber Industrial Luxury
- * Footer: Minimal, dark, with gold accents and logo.
- */
+import { useState } from "react";
+import { toast } from "sonner";
+import { Facebook, Instagram, Linkedin, Youtube, Send } from "lucide-react";
 
-const LOGO_DARK_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/logo-dark_9df0f435.png";
+const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/BkqAKKXyrgkSN3D58Kw86s/eaglewing_logo_dark_14a25129.png";
 
-const footerLinks = [
-  {
-    title: "Services",
-    links: [
-      { label: "Office Cleaning", href: "#services" },
-      { label: "Industrial Cleaning", href: "#services" },
-      { label: "School & Childcare", href: "#services" },
-      { label: "Medical Cleaning", href: "#services" },
-      { label: "Pressure Washing", href: "#services" },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { label: "About Us", href: "#about" },
-      { label: "How It Works", href: "#how-it-works" },
-      { label: "Industries", href: "#industries" },
-      { label: "Contact", href: "#contact" },
-    ],
-  },
-  {
-    title: "Industries",
-    links: [
-      { label: "Councils", href: "#industries" },
-      { label: "Warehouses", href: "#industries" },
-      { label: "Schools", href: "#industries" },
-      { label: "Medical", href: "#industries" },
-    ],
-  },
+const quickLinks = [
+  { label: "About Us", href: "#about" },
+  { label: "Our Services", href: "#services" },
+  { label: "Where We Clean", href: "#sectors" },
+  { label: "Technology", href: "#technology" },
+  { label: "Our Process", href: "#process" },
+  { label: "Contact", href: "#contact" },
+];
+
+const serviceLinks = [
+  "Contract Cleaning",
+  "AI Smart Cleaning",
+  "Builders Cleaning",
+  "Infection Control",
+  "Window Cleaning",
+  "Steam Cleaning",
+  "Floor Polishing",
+  "Pressure Washing",
+];
+
+const socialLinks = [
+  { icon: Facebook, label: "Facebook", href: "#" },
+  { icon: Instagram, label: "Instagram", href: "#" },
+  { icon: Linkedin, label: "LinkedIn", href: "#" },
+  { icon: Youtube, label: "YouTube", href: "#" },
 ];
 
 export default function Footer() {
+  const [email, setEmail] = useState("");
+
+  const handleNewsletter = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast.success("Subscribed! You'll receive our latest updates.");
+    setEmail("");
+  };
+
   const scrollTo = (href: string) => {
-    if (href === "#") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
-    }
+    if (href === "#") return;
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <footer className="relative bg-[#060606] pt-16 pb-8">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C8A84E]/20 to-transparent" />
+    <footer className="relative bg-[#0A0A0A] border-t border-white/5">
+      <div className="absolute inset-0 carbon-pattern opacity-10" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top section */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 mb-16">
-          {/* Brand */}
-          <div className="lg:col-span-2">
-            <button onClick={() => scrollTo("#")} className="mb-6 block">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+          {/* Column 1 — Logo & about */}
+          <div className="sm:col-span-2 lg:col-span-1">
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
               <img
-                src={LOGO_DARK_URL}
+                src={LOGO_URL}
                 alt="EagleWing Facility Services"
-                className="h-20 w-auto object-contain"
+                className="h-20 w-auto object-contain mb-6"
               />
-            </button>
-            <p className="text-sm text-white/30 font-body font-light leading-relaxed max-w-sm mb-6">
-              Next-generation commercial cleaning and facility solutions.
-              Engineered for performance, built on accountability.
+            </a>
+            <p className="text-sm text-white/40 font-body leading-relaxed mb-6">
+              Next-generation commercial cleaning and facility management. Intelligent systems. Measurable results. Rising above standards.
             </p>
-            <p className="text-xs font-mono text-[#C8A84E]/40 tracking-[0.2em] uppercase">
-              Rising Above Standards
-            </p>
+
+            {/* Social links */}
+            <div className="flex gap-3">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  aria-label={social.label}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toast.info("Social media links coming soon.");
+                  }}
+                  className="w-9 h-9 flex items-center justify-center border border-white/10 hover:border-[#C8A84E]/50 text-white/40 hover:text-[#C8A84E] transition-all duration-300"
+                >
+                  <social.icon className="w-4 h-4" />
+                </a>
+              ))}
+            </div>
           </div>
 
-          {/* Link columns */}
-          {footerLinks.map((col) => (
-            <div key={col.title}>
-              <h4 className="font-display text-sm text-white tracking-wider mb-4">
-                {col.title}
-              </h4>
-              <ul className="space-y-3">
-                {col.links.map((link) => (
-                  <li key={link.label}>
-                    <button
-                      onClick={() => scrollTo(link.href)}
-                      className="text-sm text-white/30 hover:text-[#C8A84E] transition-colors font-body"
-                    >
-                      {link.label}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {/* Column 2 — Quick Links */}
+          <div>
+            <h4 className="font-display text-lg text-white tracking-wide mb-5">
+              Quick Links
+            </h4>
+            <ul className="space-y-3">
+              {quickLinks.map((link) => (
+                <li key={link.label}>
+                  <button
+                    onClick={() => scrollTo(link.href)}
+                    className="text-sm text-white/40 hover:text-[#C8A84E] transition-colors font-body"
+                  >
+                    {link.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 3 — Services */}
+          <div>
+            <h4 className="font-display text-lg text-white tracking-wide mb-5">
+              Services
+            </h4>
+            <ul className="space-y-3">
+              {serviceLinks.map((service) => (
+                <li key={service}>
+                  <button
+                    onClick={() => scrollTo("#services")}
+                    className="text-sm text-white/40 hover:text-[#C8A84E] transition-colors font-body"
+                  >
+                    {service}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4 — Newsletter */}
+          <div>
+            <h4 className="font-display text-lg text-white tracking-wide mb-5">
+              Newsletter
+            </h4>
+            <p className="text-sm text-white/40 font-body leading-relaxed mb-5">
+              Stay updated with the latest in facility management, cleaning technology, and industry insights.
+            </p>
+            <form onSubmit={handleNewsletter} className="flex gap-2">
+              <input
+                type="email"
+                placeholder="Your email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="flex-1 bg-[#111111] border border-white/10 focus:border-[#C8A84E]/50 text-white placeholder:text-white/30 px-4 py-2.5 text-sm font-body outline-none transition-colors"
+              />
+              <button
+                type="submit"
+                className="w-10 h-10 flex items-center justify-center bg-[#C8A84E] hover:bg-[#E8D48B] text-black transition-colors"
+              >
+                <Send className="w-4 h-4" />
+              </button>
+            </form>
+          </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/20 font-body">
-            &copy; {new Date().getFullYear()} EagleWing Facility Services. All
-            rights reserved.
+            &copy; {new Date().getFullYear()} EagleWing Facility Services. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
-            <button className="text-xs text-white/20 hover:text-[#C8A84E] transition-colors font-body">
+          <div className="flex gap-6">
+            <button
+              onClick={() => toast.info("Privacy Policy coming soon.")}
+              className="text-xs text-white/20 hover:text-[#C8A84E] transition-colors font-body"
+            >
               Privacy Policy
             </button>
-            <button className="text-xs text-white/20 hover:text-[#C8A84E] transition-colors font-body">
+            <button
+              onClick={() => toast.info("Terms of Service coming soon.")}
+              className="text-xs text-white/20 hover:text-[#C8A84E] transition-colors font-body"
+            >
               Terms of Service
             </button>
           </div>
