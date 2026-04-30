@@ -6,7 +6,7 @@ const PILLAR_DYNAMIC = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203
 const PILLAR_TEAMS = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/hero-modern-equipment-NKnFLgEwFUcuTYusKt8KZv.webp";
 const PILLAR_CLEANPROOF = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/BkqAKKXyrgkSN3D58Kw86s/pillar-cleanproof-fYcGHMX3awT7RDBHa3nwsZ.webp";
 const PILLAR_SUSTAINABLE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/BkqAKKXyrgkSN3D58Kw86s/pillar-sustainable-CmUhkSvMkrVkLW9WPyLhfL.webp";
-const PILLAR_EQUIPMENT = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/BkqAKKXyrgkSN3D58Kw86s/pillar-equipment-ArYMxCmkBCwNVBmaGZu2oP.webp";
+const PILLAR_EQUIPMENT = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/eaglewing-equipment_5e1ef2da.png";
 
 const pillars = [
   {
