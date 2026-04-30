@@ -2,7 +2,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { Facebook, Instagram, Linkedin, Youtube, Send } from "lucide-react";
 
-const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/BkqAKKXyrgkSN3D58Kw86s/eaglewing_logo_dark_14a25129.png";
+const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/eaglewing-logo-final_4f0a6c60.webp";
 
 const quickLinks = [
   { label: "About Us", href: "#about" },
@@ -64,7 +64,7 @@ export default function Footer() {
               <img
                 src={LOGO_URL}
                 alt="EagleWing Facility Services"
-                className="h-20 w-auto object-contain mb-6"
+                className="h-28 w-auto object-contain mb-6"
               />
             </a>
             <p className="text-sm text-white/40 font-body leading-relaxed mb-6">
