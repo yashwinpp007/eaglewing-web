@@ -1,7 +1,7 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { CheckCircle } from "lucide-react";
 
-const ABOUT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/BkqAKKXyrgkSN3D58Kw86s/about-section-VH4RM4CfdYQNJmonfu5Jie.webp";
+const ABOUT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/about-smart-systems-b4BPqcp5sQRJRRu2N7ArkY.webp";
 
 export default function AboutSection() {
   const { ref, isVisible } = useScrollAnimation(0.1);
