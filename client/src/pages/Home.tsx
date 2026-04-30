@@ -5,6 +5,7 @@ import FounderSection from "@/components/FounderSection";
 import ServicesSection from "@/components/ServicesSection";
 import SectorsSection from "@/components/SectorsSection";
 import PillarsSection from "@/components/PillarsSection";
+import AfterCleanSection from "@/components/AfterCleanSection";
 import TechnologySection from "@/components/TechnologySection";
 import ProcessSection from "@/components/ProcessSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
@@ -21,6 +22,7 @@ export default function Home() {
       <ServicesSection />
       <SectorsSection />
       <PillarsSection />
+      <AfterCleanSection />
       <TechnologySection />
       <ProcessSection />
       <TestimonialsSection />
