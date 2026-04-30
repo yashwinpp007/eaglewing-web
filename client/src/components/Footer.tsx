@@ -67,9 +67,17 @@ export default function Footer() {
                 className="h-28 w-auto object-contain mb-6"
               />
             </a>
-            <p className="text-sm text-white/40 font-body leading-relaxed mb-6">
+            <p className="text-sm text-white/40 font-body leading-relaxed mb-4">
               Next-generation commercial cleaning and facility management. Intelligent systems. Measurable results. Rising above standards.
             </p>
+            <div className="space-y-2 mb-6">
+              <a href="tel:1300362402" className="flex items-center gap-2 text-sm text-white/40 hover:text-[#C8A84E] transition-colors font-body">
+                <span className="text-[#C8A84E]">P:</span> 1300 362 402
+              </a>
+              <p className="flex items-start gap-2 text-sm text-white/40 font-body">
+                <span className="text-[#C8A84E]">A:</span> 8D, 1 Trade Park Drive, Tullamarine 3043
+              </p>
+            </div>
 
             {/* Social links */}
             <div className="flex gap-3">

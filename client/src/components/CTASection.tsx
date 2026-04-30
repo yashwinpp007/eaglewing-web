@@ -73,13 +73,13 @@ export default function CTASection() {
             </p>
 
             <div className="space-y-6">
-              <a href="tel:0413391353" className="flex items-center gap-4 group">
+              <a href="tel:1300362402" className="flex items-center gap-4 group">
                 <div className="w-12 h-12 flex items-center justify-center border border-[#C8A84E]/20 group-hover:border-[#C8A84E]/50 transition-colors duration-300">
                   <Phone className="w-5 h-5 text-[#C8A84E]" />
                 </div>
                 <div>
                   <span className="text-xs text-white/30 font-mono tracking-wider uppercase block">Phone</span>
-                  <span className="text-white font-body group-hover:text-[#C8A84E] transition-colors">0413 391 353</span>
+                  <span className="text-white font-body group-hover:text-[#C8A84E] transition-colors">1300 362 402</span>
                 </div>
               </a>
 
@@ -92,6 +92,16 @@ export default function CTASection() {
                   <span className="text-white font-body group-hover:text-[#C8A84E] transition-colors">info@eaglewingservices.com.au</span>
                 </div>
               </a>
+
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 flex items-center justify-center border border-[#C8A84E]/20">
+                  <MapPin className="w-5 h-5 text-[#C8A84E]" />
+                </div>
+                <div>
+                  <span className="text-xs text-white/30 font-mono tracking-wider uppercase block">Office Address</span>
+                  <span className="text-white font-body">8D, 1 Trade Park Drive, Tullamarine 3043</span>
+                </div>
+              </div>
 
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 flex items-center justify-center border border-[#C8A84E]/20">

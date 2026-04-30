@@ -72,11 +72,11 @@ export default function Navbar() {
               </button>
             ))}
             <a
-              href="tel:0413391353"
+              href="tel:1300362402"
               className="flex items-center gap-2 text-[13px] font-medium tracking-wider text-white/70 hover:text-[#C8A84E] transition-colors duration-300 whitespace-nowrap"
             >
               <Phone className="w-3.5 h-3.5" />
-              0413 391 353
+              1300 362 402
             </a>
             <button
               onClick={() => handleNavClick("#contact")}
@@ -113,11 +113,11 @@ export default function Navbar() {
             </button>
           ))}
           <a
-            href="tel:0413391353"
+            href="tel:1300362402"
             className="flex items-center gap-2 text-base font-medium tracking-wider text-white/70 hover:text-[#C8A84E] transition-colors py-2"
           >
             <Phone className="w-4 h-4" />
-            0413 391 353
+            1300 362 402
           </a>
           <button
             onClick={() => handleNavClick("#contact")}
