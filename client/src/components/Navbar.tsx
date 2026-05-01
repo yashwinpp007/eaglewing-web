@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "wouter";
 import { Menu, X, Phone } from "lucide-react";
 
 const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/eaglewing-logo-final_4f0a6c60.webp";
@@ -9,7 +10,7 @@ const navLinks = [
   { label: "Where We Clean", href: "#sectors" },
   { label: "Technology", href: "#technology" },
   { label: "Process", href: "#process" },
-  { label: "Blog", href: "#blog" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -23,10 +24,17 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const [, navigate] = useLocation();
+
   const handleNavClick = (href: string) => {
     setMobileOpen(false);
-    if (href === "#blog") {
-      // placeholder
+    if (href === "/blog") {
+      navigate("/blog");
+      return;
+    }
+    // If we're not on the home page, navigate home first
+    if (window.location.pathname !== "/") {
+      navigate("/" + href);
       return;
     }
     const el = document.querySelector(href);

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "wouter";
 import { toast } from "sonner";
 import { Facebook, Instagram, Linkedin, Youtube, Send } from "lucide-react";
 
@@ -10,6 +11,7 @@ const quickLinks = [
   { label: "Where We Clean", href: "#sectors" },
   { label: "Technology", href: "#technology" },
   { label: "Our Process", href: "#process" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -40,8 +42,19 @@ export default function Footer() {
     setEmail("");
   };
 
+  const [, navigate] = useLocation();
+
   const scrollTo = (href: string) => {
     if (href === "#") return;
+    if (href.startsWith("/")) {
+      navigate(href);
+      return;
+    }
+    // If we're not on the home page, navigate home first
+    if (window.location.pathname !== "/") {
+      navigate("/" + href);
+      return;
+    }
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
