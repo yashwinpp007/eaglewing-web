@@ -165,9 +165,16 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-white/20 font-body">
-            &copy; {new Date().getFullYear()} EagleWing Facility Services. All rights reserved.
-          </p>
+          <div className="flex items-center gap-3">
+            <img
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/intelligent-cleaning-logo_407f8d45.png"
+              alt="Intelligent Cleaning System"
+              className="w-8 h-8 object-contain opacity-60"
+            />
+            <p className="text-xs text-white/20 font-body">
+              &copy; {new Date().getFullYear()} EagleWing Facility Services. All rights reserved.
+            </p>
+          </div>
           <div className="flex gap-6">
             <button
               onClick={() => toast.info("Privacy Policy coming soon.")}

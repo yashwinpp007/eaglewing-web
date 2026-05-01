@@ -36,6 +36,11 @@ export default function TechnologySection() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
+          <img
+            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/intelligent-cleaning-logo_407f8d45.png"
+            alt="Intelligent Cleaning System"
+            className="w-16 h-16 sm:w-20 sm:h-20 object-contain mx-auto mb-4 opacity-80"
+          />
           <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-[#1a1a1a] leading-[0.95] mb-6">
             EagleWing <span className="text-gold-gradient">Command™</span>
           </h2>

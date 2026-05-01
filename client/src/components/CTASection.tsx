@@ -15,6 +15,7 @@ const serviceOptions = [
   "Floor Polishing",
   "Pressure Washing",
   "Washroom Hygiene Service",
+  "Healthcare & Aged Care",
   "Other / Custom",
 ];
 

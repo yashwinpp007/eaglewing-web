@@ -29,9 +29,16 @@ export default function AboutSection() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-[#1a1a1a] leading-[0.95] mb-8">
-              A Smarter Way <span className="text-gold-gradient">to Clean</span>
-            </h2>
+            <div className="flex items-center gap-4 mb-8">
+              <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-[#1a1a1a] leading-[0.95]">
+                A Smarter Way <span className="text-gold-gradient">to Clean</span>
+              </h2>
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/intelligent-cleaning-logo_407f8d45.png"
+                alt="Intelligent Cleaning System"
+                className="w-16 h-16 sm:w-20 sm:h-20 object-contain opacity-80 hidden sm:block"
+              />
+            </div>
 
             <div className="space-y-5 text-[#444] font-body text-base leading-relaxed">
               <p>

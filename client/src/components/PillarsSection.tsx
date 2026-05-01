@@ -114,6 +114,11 @@ export default function PillarsSection() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
+          <img
+            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/intelligent-cleaning-logo_407f8d45.png"
+            alt="Intelligent Cleaning System"
+            className="w-24 h-24 sm:w-32 sm:h-32 object-contain mx-auto mb-6 opacity-90"
+          />
           <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-white leading-[0.95] mb-6">
             Our Intelligent Cleaning{" "}
             <span className="text-gold-gradient">Framework</span>
