@@ -7,6 +7,7 @@ import SectorsSection from "@/components/SectorsSection";
 import PillarsSection from "@/components/PillarsSection";
 import AfterCleanSection from "@/components/AfterCleanSection";
 import TechnologySection from "@/components/TechnologySection";
+import SustainabilitySection from "@/components/SustainabilitySection";
 import ProcessSection from "@/components/ProcessSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import CTASection from "@/components/CTASection";
@@ -24,6 +25,7 @@ export default function Home() {
       <PillarsSection />
       <AfterCleanSection />
       <TechnologySection />
+      <SustainabilitySection />
       <ProcessSection />
       <TestimonialsSection />
       <CTASection />

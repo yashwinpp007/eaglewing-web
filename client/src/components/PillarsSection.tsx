@@ -59,11 +59,11 @@ function PillarCard({ pillar, index }: { pillar: typeof pillars[0]; index: numbe
       }`}
     >
       {/* Image */}
-      <div className={`relative h-64 sm:h-80 lg:h-auto ${isReversed ? "lg:order-2" : ""}`}>
+      <div className={`relative h-64 sm:h-80 lg:h-[400px] ${isReversed ? "lg:order-2" : ""}`}>
         <img
           src={pillar.image}
           alt={pillar.name}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain bg-[#1a1a1a]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
         {/* Gold corner accents */}

@@ -10,6 +10,7 @@ import {
   CircleDot,
   Waves,
   Bath,
+  Heart,
   X,
   CheckCircle,
   ArrowRight,
@@ -25,6 +26,7 @@ const SERVICE_IMAGES = {
   floor: "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/service-floor-polishing-n6K2TP8xGAYMXSykr35ax6.webp",
   pressure: "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/service-pressure-washing-mT2j8b2pEgBqfg6pJbgfdG.webp",
   washroom: "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/service-washroom-hygiene-hmBAqgLiNiLaQFeb3xhVrp.webp",
+  healthcare: "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/service-healthcare-DCXtufjmDsuwd6yvXYJVZ5.webp",
 };
 
 interface ServiceDetail {
@@ -181,6 +183,22 @@ const services: ServiceDetail[] = [
       "Regular audits and quality inspections",
     ],
     ideal: "Corporate offices, shopping centres, hospitality venues, healthcare facilities, and any high-traffic washroom environment.",
+  },
+  {
+    icon: Heart,
+    label: "Healthcare &\nAged Care",
+    title: "Healthcare & Aged Care Cleaning",
+    image: SERVICE_IMAGES.healthcare,
+    description: "Specialist cleaning for hospitals, medical centres, aged care facilities, and allied health clinics. Our teams are trained in healthcare-specific infection control protocols, understand the sensitivity required in aged care environments, and maintain full compliance with Australian healthcare cleaning standards and accreditation requirements.",
+    features: [
+      "Healthcare-specific infection control protocols",
+      "Aged care facility cleaning with resident sensitivity",
+      "Operating theatre and clinical area deep cleaning",
+      "Compliance with AS/NZS 3003 and aged care standards",
+      "Colour-coded cleaning systems to prevent cross-contamination",
+      "24/7 availability for emergency outbreak response",
+    ],
+    ideal: "Hospitals, medical centres, aged care facilities, dental clinics, pathology labs, and allied health practices requiring accreditation-compliant cleaning.",
   },
 ];
 
