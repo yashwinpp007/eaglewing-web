@@ -42,7 +42,7 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-28 sm:h-32 lg:h-36">
+        <div className="flex items-center justify-between h-20 sm:h-32 lg:h-36">
           {/* Logo — BIGGER */}
           <a
             href="#"
@@ -56,7 +56,7 @@ export default function Navbar() {
             <img
               src={LOGO_URL}
               alt="EagleWing Facility Services — commercial cleaning Melbourne and Sydney"
-              className="h-24 sm:h-28 lg:h-36 w-auto object-contain"
+              className="h-16 sm:h-28 lg:h-36 w-auto object-contain"
             />
           </a>
 

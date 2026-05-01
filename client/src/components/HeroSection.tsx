@@ -78,7 +78,7 @@ export default function HeroSection() {
 
   return (
     <section id="home" className="relative w-full overflow-hidden bg-black">
-      <div className="relative h-[100svh] min-h-[600px] max-h-[850px] sm:min-h-[700px] sm:max-h-none">
+      <div className="relative h-[100svh] min-h-[600px] sm:min-h-[700px]">
         {/* Background slides */}
         <AnimatePresence mode="wait">
           <motion.div
@@ -93,18 +93,18 @@ export default function HeroSection() {
               className="absolute inset-0 bg-cover bg-center"
               style={{ backgroundImage: `url(${slide.bg})` }}
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/30" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20 sm:from-black/85 sm:via-black/60 sm:to-black/30" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/10 sm:from-black/80 sm:to-black/20" />
           </motion.div>
         </AnimatePresence>
 
         {/* Carbon pattern */}
-        <div className="absolute inset-0 carbon-pattern opacity-30 z-[1]" />
+        <div className="absolute inset-0 carbon-pattern opacity-10 sm:opacity-30 z-[1]" />
 
         {/* Content */}
-        <div className="relative z-10 h-full flex items-center">
-          <div className="w-full px-4 sm:px-6 lg:px-12 pt-28 sm:pt-40 pb-32 sm:pb-0">
-            <div className="max-w-2xl">
+        <div className="relative z-10 h-full flex items-end sm:items-center">
+          <div className="w-full px-6 sm:px-6 lg:px-12 pt-20 sm:pt-40 pb-36 sm:pb-0">
+            <div className="max-w-2xl text-center sm:text-left">
               {/* Label */}
               <AnimatePresence mode="wait">
                 <motion.div
@@ -113,7 +113,7 @@ export default function HeroSection() {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: 30 }}
                   transition={{ duration: 0.5 }}
-                  className="flex items-center gap-3 mb-4 sm:mb-8"
+                  className="flex items-center gap-3 mb-4 sm:mb-8 justify-center sm:justify-start"
                 >
                   <div className="h-px w-12 bg-gradient-to-r from-[#C8A84E] to-transparent" />
                   <span className="text-[#C8A84E] text-xs font-mono tracking-[0.3em] uppercase">
@@ -130,7 +130,7 @@ export default function HeroSection() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.7, delay: 0.1 }}
-                  className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight mb-4 sm:mb-6"
+                  className="font-display text-[2.75rem] sm:text-6xl md:text-7xl lg:text-8xl leading-[0.9] tracking-tight mb-6 sm:mb-6"
                 >
                   <span className="text-white">{slide.headline[0]}</span>
                   <br />
@@ -146,7 +146,7 @@ export default function HeroSection() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
-                  className="text-base sm:text-xl text-white/60 font-body font-light max-w-xl mb-6 sm:mb-10 leading-relaxed"
+                  className="hidden sm:block text-xl text-white/60 font-body font-light max-w-xl mb-10 leading-relaxed"
                 >
                   {slide.description}
                 </motion.p>
@@ -160,18 +160,18 @@ export default function HeroSection() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.5, delay: 0.3 }}
-                  className="flex flex-col sm:flex-row gap-3 sm:gap-4"
+                  className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center sm:items-start"
                 >
                   <button
                     onClick={() => scrollTo(slide.cta1.href)}
-                    className="btn-gold px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-bold tracking-wider uppercase font-body flex items-center gap-2 justify-center"
+                    className="btn-gold w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-bold tracking-wider uppercase font-body flex items-center gap-2 justify-center"
                   >
                     {slide.cta1.label}
                     <slide.cta1.icon className="w-4 h-4" />
                   </button>
                   <button
                     onClick={() => scrollTo(slide.cta2.href)}
-                    className="px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-bold tracking-wider uppercase font-body text-white border border-white/20 hover:border-[#C8A84E]/60 hover:text-[#C8A84E] transition-all duration-300 bg-white/5 backdrop-blur-sm flex items-center gap-2 justify-center"
+                    className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-bold tracking-wider uppercase font-body text-white border border-white/20 hover:border-[#C8A84E]/60 hover:text-[#C8A84E] transition-all duration-300 bg-white/5 backdrop-blur-sm flex items-center gap-2 justify-center"
                   >
                     <slide.cta2.icon className="w-4 h-4" />
                     {slide.cta2.label}
@@ -205,7 +205,7 @@ export default function HeroSection() {
         </div>
 
         {/* Slide indicators */}
-        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2 sm:hidden">
+        <div className="absolute bottom-[140px] left-1/2 -translate-x-1/2 z-10 flex items-center gap-2 sm:hidden">
           {slides.map((_, i) => (
             <button
               key={i}
