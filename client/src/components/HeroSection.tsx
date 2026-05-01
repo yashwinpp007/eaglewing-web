@@ -78,7 +78,7 @@ export default function HeroSection() {
 
   return (
     <section id="home" className="relative w-full overflow-hidden bg-black">
-      <div className="relative h-screen min-h-[700px]">
+      <div className="relative h-[100svh] min-h-[600px] max-h-[850px] sm:min-h-[700px] sm:max-h-none">
         {/* Background slides */}
         <AnimatePresence mode="wait">
           <motion.div
@@ -103,7 +103,7 @@ export default function HeroSection() {
 
         {/* Content */}
         <div className="relative z-10 h-full flex items-center">
-          <div className="w-full px-4 sm:px-6 lg:px-12 pt-40">
+          <div className="w-full px-4 sm:px-6 lg:px-12 pt-28 sm:pt-40 pb-32 sm:pb-0">
             <div className="max-w-2xl">
               {/* Label */}
               <AnimatePresence mode="wait">
@@ -113,7 +113,7 @@ export default function HeroSection() {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: 30 }}
                   transition={{ duration: 0.5 }}
-                  className="flex items-center gap-3 mb-8"
+                  className="flex items-center gap-3 mb-4 sm:mb-8"
                 >
                   <div className="h-px w-12 bg-gradient-to-r from-[#C8A84E] to-transparent" />
                   <span className="text-[#C8A84E] text-xs font-mono tracking-[0.3em] uppercase">
@@ -130,7 +130,7 @@ export default function HeroSection() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.7, delay: 0.1 }}
-                  className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight mb-6"
+                  className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight mb-4 sm:mb-6"
                 >
                   <span className="text-white">{slide.headline[0]}</span>
                   <br />
@@ -146,7 +146,7 @@ export default function HeroSection() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
-                  className="text-lg sm:text-xl text-white/60 font-body font-light max-w-xl mb-10 leading-relaxed"
+                  className="text-base sm:text-xl text-white/60 font-body font-light max-w-xl mb-6 sm:mb-10 leading-relaxed"
                 >
                   {slide.description}
                 </motion.p>
@@ -160,18 +160,18 @@ export default function HeroSection() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.5, delay: 0.3 }}
-                  className="flex flex-col sm:flex-row gap-4"
+                  className="flex flex-col sm:flex-row gap-3 sm:gap-4"
                 >
                   <button
                     onClick={() => scrollTo(slide.cta1.href)}
-                    className="btn-gold px-8 py-4 text-base font-bold tracking-wider uppercase font-body flex items-center gap-2 justify-center"
+                    className="btn-gold px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-bold tracking-wider uppercase font-body flex items-center gap-2 justify-center"
                   >
                     {slide.cta1.label}
                     <slide.cta1.icon className="w-4 h-4" />
                   </button>
                   <button
                     onClick={() => scrollTo(slide.cta2.href)}
-                    className="px-8 py-4 text-base font-bold tracking-wider uppercase font-body text-white border border-white/20 hover:border-[#C8A84E]/60 hover:text-[#C8A84E] transition-all duration-300 bg-white/5 backdrop-blur-sm flex items-center gap-2 justify-center"
+                    className="px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-bold tracking-wider uppercase font-body text-white border border-white/20 hover:border-[#C8A84E]/60 hover:text-[#C8A84E] transition-all duration-300 bg-white/5 backdrop-blur-sm flex items-center gap-2 justify-center"
                   >
                     <slide.cta2.icon className="w-4 h-4" />
                     {slide.cta2.label}
@@ -184,18 +184,18 @@ export default function HeroSection() {
 
         {/* Stats bar at bottom */}
         <div className="absolute bottom-0 left-0 right-0 z-10">
-          <div className="px-4 sm:px-6 lg:px-12 pb-8">
-            <div className="flex gap-8 sm:gap-12 pt-8 border-t border-white/10">
+          <div className="px-4 sm:px-6 lg:px-12 pb-4 sm:pb-8">
+            <div className="flex gap-6 sm:gap-12 pt-4 sm:pt-8 border-t border-white/10">
               {[
                 { value: "20+", label: "Years Experience" },
                 { value: "500+", label: "Facilities Managed" },
                 { value: "98%", label: "Client Retention" },
               ].map((stat) => (
                 <div key={stat.label}>
-                  <div className="font-display text-3xl sm:text-4xl text-[#C8A84E]">
+                  <div className="font-display text-2xl sm:text-4xl text-[#C8A84E]">
                     {stat.value}
                   </div>
-                  <div className="text-xs text-white/40 font-mono tracking-wider uppercase mt-1">
+                  <div className="text-[10px] sm:text-xs text-white/40 font-mono tracking-wider uppercase mt-1">
                     {stat.label}
                   </div>
                 </div>
@@ -205,7 +205,7 @@ export default function HeroSection() {
         </div>
 
         {/* Slide indicators */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2 sm:hidden">
+        <div className="absolute bottom-20 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2 sm:hidden">
           {slides.map((_, i) => (
             <button
               key={i}

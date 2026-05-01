@@ -115,7 +115,7 @@ export default function PillarsSection() {
           }`}
         >
           <img
-            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/intelligent-cleaning-logo_407f8d45.png"
+            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/intelligent-cleaning-logo-transparent_658103e2.png"
             alt="Intelligent Cleaning System"
             className="w-24 h-24 sm:w-32 sm:h-32 object-contain mx-auto mb-6 opacity-90"
           />
