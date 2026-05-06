@@ -1,5 +1,5 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   Brain,
   Radar,
@@ -10,6 +10,7 @@ import {
   X,
   ArrowRight,
   CheckCircle,
+  Sparkles,
 } from "lucide-react";
 
 const WING_LOGO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/intelligent-cleaning-logo-transparent_658103e2.png";
@@ -22,12 +23,13 @@ interface Capability {
   features: string[];
   stat: string;
   statLabel: string;
+  color: string;
 }
 
 const capabilities: Capability[] = [
   {
     icon: Brain,
-    label: "Intelligent\nSystems",
+    label: "Intelligent Systems",
     title: "Intelligent Systems",
     description:
       "Our proprietary SMART System™ uses AI-powered scheduling, site mapping, and real-time analytics to build a precise cleaning intelligence profile for every facility. No guesswork — just data-driven decisions that optimise outcomes and reduce costs.",
@@ -41,10 +43,11 @@ const capabilities: Capability[] = [
     ],
     stat: "40%",
     statLabel: "More Efficient",
+    color: "#C8A84E",
   },
   {
     icon: Radar,
-    label: "Real-Time\nTracking",
+    label: "Real-Time Tracking",
     title: "Real-Time Tracking",
     description:
       "GPS geofencing, live dashboards, and instant notifications give you complete visibility over every cleaning operation. Know exactly when your team arrives, what they're doing, and when they leave — all from your phone or desktop.",
@@ -58,10 +61,11 @@ const capabilities: Capability[] = [
     ],
     stat: "24/7",
     statLabel: "Visibility",
+    color: "#C8A84E",
   },
   {
     icon: ShieldCheck,
-    label: "Verified\nResults",
+    label: "Verified Results",
     title: "Verified Results",
     description:
       "CleanProof™ is our digital verification platform. Every task is logged, timestamped, and confirmed via QR-based check-ins and before/after photo evidence — giving you full transparency, accountability, and audit-ready documentation.",
@@ -75,10 +79,11 @@ const capabilities: Capability[] = [
     ],
     stat: "100%",
     statLabel: "Accountable",
+    color: "#C8A84E",
   },
   {
     icon: Users,
-    label: "Trained\nTeams",
+    label: "Trained Teams",
     title: "Trained & Verified Teams",
     description:
       "Every EagleWing team member is background-checked, formally trained, and regularly assessed. Our people are our product — we invest heavily in their development with ongoing certification, site-specific inductions, and performance reviews.",
@@ -92,10 +97,11 @@ const capabilities: Capability[] = [
     ],
     stat: "100%",
     statLabel: "Certified",
+    color: "#C8A84E",
   },
   {
     icon: Leaf,
-    label: "Sustainable\nPractices",
+    label: "Sustainable Practices",
     title: "Sustainable Practices",
     description:
       "We use GECA-certified products, low-waste processes, and water-efficient methods across all operations. Our commitment to sustainability reduces environmental impact without compromising cleaning results — helping you meet ESG targets.",
@@ -109,10 +115,11 @@ const capabilities: Capability[] = [
     ],
     stat: "70%",
     statLabel: "Less Water",
+    color: "#C8A84E",
   },
   {
     icon: Cpu,
-    label: "Advanced\nEquipment",
+    label: "Advanced Equipment",
     title: "Advanced Equipment",
     description:
       "From autonomous floor scrubbers to HEPA-filtration systems, EagleWing deploys industry-leading equipment that delivers superior results with greater efficiency. Our technology-grade tools outperform traditional methods every time.",
@@ -126,8 +133,47 @@ const capabilities: Capability[] = [
     ],
     stat: "3x",
     statLabel: "Performance",
+    color: "#C8A84E",
   },
 ];
+
+function AnimatedCounter({ value, isVisible }: { value: string; isVisible: boolean }) {
+  const [display, setDisplay] = useState("0");
+  const hasAnimated = useRef(false);
+
+  useEffect(() => {
+    if (!isVisible || hasAnimated.current) return;
+    hasAnimated.current = true;
+
+    const numericMatch = value.match(/(\d+)/);
+    if (!numericMatch) {
+      setDisplay(value);
+      return;
+    }
+
+    const target = parseInt(numericMatch[1]);
+    const suffix = value.replace(numericMatch[1], "");
+    const duration = 1500;
+    const steps = 40;
+    const increment = target / steps;
+    let current = 0;
+    let step = 0;
+
+    const timer = setInterval(() => {
+      step++;
+      current = Math.min(Math.round(increment * step), target);
+      setDisplay(current + suffix);
+      if (step >= steps) {
+        clearInterval(timer);
+        setDisplay(value);
+      }
+    }, duration / steps);
+
+    return () => clearInterval(timer);
+  }, [isVisible, value]);
+
+  return <span>{isVisible ? display : "0"}</span>;
+}
 
 function CapabilityModal({
   capability,
@@ -141,15 +187,12 @@ function CapabilityModal({
       className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6"
       onClick={onClose}
     >
-      {/* Backdrop */}
-      <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-black/80 backdrop-blur-md" />
 
-      {/* Modal */}
       <div
-        className="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto bg-[#111111] border border-white/10 rounded-sm shadow-2xl animate-in fade-in zoom-in-95 duration-300"
+        className="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto bg-[#111111] border border-[#C8A84E]/20 shadow-2xl shadow-[#C8A84E]/10 animate-in fade-in zoom-in-95 duration-300"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close button */}
         <button
           onClick={onClose}
           className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center bg-black/60 border border-white/20 rounded-full hover:border-[#C8A84E]/50 transition-colors"
@@ -157,10 +200,9 @@ function CapabilityModal({
           <X className="w-5 h-5 text-white" />
         </button>
 
-        {/* Header */}
         <div className="p-8 pb-0">
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-16 h-16 bg-gradient-to-br from-[#C8A84E] to-[#E8D48B] flex items-center justify-center">
+            <div className="w-16 h-16 bg-gradient-to-br from-[#C8A84E] to-[#E8D48B] flex items-center justify-center shadow-lg shadow-[#C8A84E]/30">
               <capability.icon className="w-8 h-8 text-black" strokeWidth={1.5} />
             </div>
             <div>
@@ -173,7 +215,6 @@ function CapabilityModal({
             </div>
           </div>
 
-          {/* Stat highlight */}
           <div className="flex items-end gap-3 mb-6 pb-6 border-b border-white/10">
             <span className="font-display text-5xl sm:text-6xl text-[#C8A84E] leading-none">
               {capability.stat}
@@ -184,14 +225,11 @@ function CapabilityModal({
           </div>
         </div>
 
-        {/* Content */}
         <div className="px-8 pb-8 space-y-6">
-          {/* Description */}
           <p className="text-white/70 font-body text-base leading-relaxed">
             {capability.description}
           </p>
 
-          {/* Features */}
           <div>
             <h4 className="text-white font-display text-lg mb-4 flex items-center gap-2">
               <span className="w-8 h-px bg-[#C8A84E]" />
@@ -200,19 +238,13 @@ function CapabilityModal({
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {capability.features.map((feature, i) => (
                 <div key={i} className="flex items-start gap-3">
-                  <CheckCircle
-                    className="w-4 h-4 text-[#C8A84E] mt-0.5 flex-shrink-0"
-                    strokeWidth={1.5}
-                  />
-                  <span className="text-white/60 font-body text-sm leading-relaxed">
-                    {feature}
-                  </span>
+                  <CheckCircle className="w-4 h-4 text-[#C8A84E] mt-0.5 flex-shrink-0" strokeWidth={1.5} />
+                  <span className="text-white/60 font-body text-sm leading-relaxed">{feature}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* CTA */}
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
             <button
               onClick={() => {
@@ -224,8 +256,7 @@ function CapabilityModal({
               }}
               className="flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-[#C8A84E] to-[#E8D48B] text-black font-bold text-sm tracking-wider uppercase font-body hover:shadow-lg hover:shadow-[#C8A84E]/20 transition-all duration-300"
             >
-              Get a Quote
-              <ArrowRight className="w-4 h-4" />
+              Get a Quote <ArrowRight className="w-4 h-4" />
             </button>
             <button
               onClick={onClose}
@@ -246,123 +277,124 @@ export default function AboutSection() {
 
   return (
     <>
-      <section id="about" className="relative py-24 sm:py-32 bg-white overflow-hidden">
-        {/* Subtle grid background */}
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage: `linear-gradient(rgba(200,168,78,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(200,168,78,0.3) 1px, transparent 1px)`,
-            backgroundSize: "80px 80px",
-          }}
-        />
-
-        {/* Gold accent line top */}
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#C8A84E]/40 to-transparent" />
+      <section id="about" className="relative py-20 sm:py-28 overflow-hidden bg-gradient-to-b from-[#fefcf7] via-white to-[#fefcf7]">
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#C8A84E] to-transparent" />
+        <div className="absolute top-20 right-0 w-96 h-96 bg-[#C8A84E]/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-20 left-0 w-80 h-80 bg-[#C8A84E]/5 rounded-full blur-3xl pointer-events-none" />
 
         <div ref={ref} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section label */}
+          {/* Header */}
           <div
-            className={`flex items-center gap-3 mb-6 transition-all duration-700 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
-            }`}
-          >
-            <div className="h-px w-16 bg-gradient-to-r from-[#C8A84E] to-[#C8A84E]/20" />
-            <span className="text-[#C8A84E] text-[11px] font-mono tracking-[0.4em] uppercase">
-              About Us
-            </span>
-          </div>
-
-          {/* Headline area */}
-          <div
-            className={`text-center max-w-4xl mx-auto mb-16 sm:mb-20 transition-all duration-1000 ${
+            className={`text-center mb-16 sm:mb-20 transition-all duration-1000 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
             }`}
           >
-            <div className="flex items-center justify-center gap-4 mb-6">
-              <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#1a1a1a] leading-[0.9]">
-                A Smarter Way{" "}
-                <span className="text-gold-gradient">to Clean</span>
-              </h2>
-              <img
-                src={WING_LOGO}
-                alt="Intelligent Cleaning System"
-                className="w-12 h-12 sm:w-16 sm:h-16 object-contain opacity-70 hidden sm:block"
-              />
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#C8A84E]/10 border border-[#C8A84E]/20 rounded-full mb-8">
+              <Sparkles className="w-4 h-4 text-[#C8A84E]" />
+              <span className="text-[#C8A84E] text-xs font-bold tracking-[0.2em] uppercase font-body">
+                Why EagleWing
+              </span>
             </div>
-            <p className="text-[#666] font-body text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto">
-              Traditional cleaning fails. We replaced guesswork with intelligence.
-              <span className="text-[#1a1a1a] font-medium"> Click any capability</span> to learn how.
+
+            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#1a1a1a] leading-[0.9] mb-6">
+              A Smarter Way{" "}
+              <span className="relative inline-block">
+                <span className="text-gold-gradient">to Clean</span>
+                <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" fill="none">
+                  <path d="M2 6C50 2 150 2 198 6" stroke="#C8A84E" strokeWidth="3" strokeLinecap="round" opacity="0.4" />
+                </svg>
+              </span>
+            </h2>
+
+            <p className="text-[#555] font-body text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto">
+              We replaced guesswork with intelligence.{" "}
+              <span className="text-[#1a1a1a] font-semibold">Tap any capability</span> to see how.
             </p>
           </div>
 
-          {/* Icon grid — 6 capabilities */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 sm:gap-8 mb-16">
+          {/* Capability Cards Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-16">
             {capabilities.map((cap, i) => (
               <button
                 key={cap.label}
                 onClick={() => setSelectedCapability(cap)}
-                className={`group flex flex-col items-center text-center cursor-pointer transition-all duration-700 ${
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                className={`group relative p-6 sm:p-8 text-left cursor-pointer transition-all duration-700 bg-white border border-[#e8e4dc] hover:border-[#C8A84E] hover:shadow-xl hover:shadow-[#C8A84E]/10 hover:-translate-y-1 ${
+                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                 }`}
-                style={{ transitionDelay: `${i * 100}ms` }}
+                style={{ transitionDelay: `${i * 120}ms` }}
               >
-                {/* Icon circle */}
-                <div className="relative w-20 h-20 sm:w-24 sm:h-24 mb-4">
-                  {/* Outer ring */}
-                  <div className="absolute inset-0 rounded-full border-2 border-[#C8A84E]/30 group-hover:border-[#C8A84E] transition-all duration-500" />
-                  {/* Inner fill */}
-                  <div className="absolute inset-2 rounded-full bg-[#C8A84E]/5 group-hover:bg-[#C8A84E]/15 flex items-center justify-center transition-all duration-500 group-hover:scale-110">
-                    <cap.icon
-                      className="w-8 h-8 sm:w-9 sm:h-9 text-[#C8A84E] group-hover:text-[#B8942E] transition-colors duration-500"
-                      strokeWidth={1.5}
-                    />
-                  </div>
-                  {/* Pulse on hover */}
-                  <div className="absolute inset-0 rounded-full border border-[#C8A84E]/0 group-hover:border-[#C8A84E]/30 group-hover:scale-125 transition-all duration-700 opacity-0 group-hover:opacity-100" />
+                {/* Top accent bar */}
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#C8A84E] to-[#E8D48B] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+
+                {/* Icon */}
+                <div className="w-14 h-14 sm:w-16 sm:h-16 mb-5 bg-gradient-to-br from-[#C8A84E] to-[#E8D48B] flex items-center justify-center shadow-md group-hover:shadow-lg group-hover:shadow-[#C8A84E]/20 transition-all duration-500 group-hover:scale-110">
+                  <cap.icon className="w-7 h-7 sm:w-8 sm:h-8 text-white" strokeWidth={1.5} />
                 </div>
 
                 {/* Label */}
-                <span className="text-xs sm:text-sm font-bold tracking-wider uppercase text-[#333] font-body whitespace-pre-line leading-tight group-hover:text-[#C8A84E] transition-colors duration-300">
+                <h3 className="font-display text-base sm:text-lg text-[#1a1a1a] mb-2 group-hover:text-[#C8A84E] transition-colors duration-300">
                   {cap.label}
-                </span>
+                </h3>
 
-                {/* Stat teaser */}
-                <span className="mt-2 text-[#C8A84E] font-display text-lg sm:text-xl opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-                  {cap.stat}
-                </span>
+                {/* Stat */}
+                <div className="flex items-baseline gap-2">
+                  <span className="font-display text-2xl sm:text-3xl text-[#C8A84E]">
+                    <AnimatedCounter value={cap.stat} isVisible={isVisible} />
+                  </span>
+                  <span className="text-[#888] font-body text-xs uppercase tracking-wider">
+                    {cap.statLabel}
+                  </span>
+                </div>
+
+                {/* Arrow indicator */}
+                <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 w-8 h-8 flex items-center justify-center rounded-full bg-[#C8A84E]/0 group-hover:bg-[#C8A84E]/10 transition-all duration-300">
+                  <ArrowRight className="w-4 h-4 text-[#C8A84E] opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-x-1 group-hover:translate-x-0" />
+                </div>
               </button>
             ))}
           </div>
 
-          {/* Bottom tagline bar */}
+          {/* Bottom CTA Banner */}
           <div
-            className={`flex flex-col sm:flex-row items-center justify-between gap-6 p-6 sm:p-8 border border-[#C8A84E]/20 bg-[#faf8f2] transition-all duration-700 delay-500 ${
+            className={`relative overflow-hidden p-8 sm:p-10 bg-[#1a1a1a] transition-all duration-700 delay-500 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <div className="text-center sm:text-left">
-              <span className="text-[#1a1a1a] font-display text-xl sm:text-2xl">
-                20+ years. 500+ facilities. 98% retention.
-              </span>
-              <p className="text-[#666] font-body text-sm mt-1">
-                Next-generation cleaning built on systems, not promises.
-              </p>
+            {/* Background pattern */}
+            <div className="absolute inset-0 opacity-5" style={{
+              backgroundImage: `radial-gradient(circle at 2px 2px, #C8A84E 1px, transparent 0)`,
+              backgroundSize: "32px 32px",
+            }} />
+
+            <div className="relative flex flex-col sm:flex-row items-center justify-between gap-6">
+              <div className="flex items-center gap-6 text-center sm:text-left">
+                <img src={WING_LOGO} alt="EagleWing" className="w-14 h-14 object-contain hidden sm:block" />
+                <div>
+                  <span className="text-white font-display text-xl sm:text-2xl block">
+                    20+ years. 500+ facilities. 98% retention.
+                  </span>
+                  <p className="text-white/50 font-body text-sm mt-1">
+                    Next-generation cleaning built on systems, not promises.
+                  </p>
+                </div>
+              </div>
+              <button
+                onClick={() => {
+                  const el = document.querySelector("#contact");
+                  if (el) el.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="px-8 py-4 bg-gradient-to-r from-[#C8A84E] to-[#E8D48B] text-black font-bold text-sm tracking-wider uppercase font-body hover:shadow-lg hover:shadow-[#C8A84E]/30 transition-all duration-300 flex items-center gap-2 whitespace-nowrap"
+              >
+                Get Started
+                <ArrowRight className="w-4 h-4" />
+              </button>
             </div>
-            <button
-              onClick={() => {
-                const el = document.querySelector("#contact");
-                if (el) el.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="px-8 py-4 bg-gradient-to-r from-[#C8A84E] to-[#E8D48B] text-black font-bold text-sm tracking-wider uppercase font-body hover:shadow-lg hover:shadow-[#C8A84E]/30 transition-all duration-300 flex items-center gap-2 whitespace-nowrap"
-            >
-              Get Started
-              <ArrowRight className="w-4 h-4" />
-            </button>
           </div>
         </div>
       </section>
 
-      {/* Capability Modal */}
       {selectedCapability && (
         <CapabilityModal
           capability={selectedCapability}
