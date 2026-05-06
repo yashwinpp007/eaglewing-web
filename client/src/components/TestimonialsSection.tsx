@@ -11,10 +11,10 @@ const testimonials = [
     stars: 5,
   },
   {
-    quote: "We switched to EagleWing after years of frustration with inconsistent cleaning. The difference was immediate. Their CleanProof\u2122 system means we always know exactly what's been done.",
-    name: "James Chen",
-    title: "Operations Director",
-    company: "Pacific Health Network",
+    quote: "Brian's leadership, industry knowledge, and commitment to excellence make him someone who genuinely stands out. His focus on systems, technology, and quality service positions EagleWing as a forward-thinking company built for the future.",
+    name: "Brian Walter",
+    title: "Director",
+    company: "Peercore",
     stars: 5,
   },
   {
