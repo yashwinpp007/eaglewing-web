@@ -246,18 +246,18 @@ export default function AboutSection() {
 
   return (
     <>
-      <section id="about" className="relative py-24 sm:py-32 bg-[#0a0a0a] overflow-hidden">
+      <section id="about" className="relative py-24 sm:py-32 bg-white overflow-hidden">
         {/* Subtle grid background */}
         <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.04]"
           style={{
-            backgroundImage: `linear-gradient(rgba(200,168,78,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(200,168,78,0.4) 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(rgba(200,168,78,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(200,168,78,0.3) 1px, transparent 1px)`,
             backgroundSize: "80px 80px",
           }}
         />
 
         {/* Gold accent line top */}
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#C8A84E]/30 to-transparent" />
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#C8A84E]/40 to-transparent" />
 
         <div ref={ref} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section label */}
@@ -266,7 +266,7 @@ export default function AboutSection() {
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
             }`}
           >
-            <div className="h-px w-16 bg-gradient-to-r from-[#C8A84E] to-transparent" />
+            <div className="h-px w-16 bg-gradient-to-r from-[#C8A84E] to-[#C8A84E]/20" />
             <span className="text-[#C8A84E] text-[11px] font-mono tracking-[0.4em] uppercase">
               About Us
             </span>
@@ -279,7 +279,7 @@ export default function AboutSection() {
             }`}
           >
             <div className="flex items-center justify-center gap-4 mb-6">
-              <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-[0.9]">
+              <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#1a1a1a] leading-[0.9]">
                 A Smarter Way{" "}
                 <span className="text-gold-gradient">to Clean</span>
               </h2>
@@ -289,9 +289,9 @@ export default function AboutSection() {
                 className="w-12 h-12 sm:w-16 sm:h-16 object-contain opacity-70 hidden sm:block"
               />
             </div>
-            <p className="text-white/50 font-body text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto">
+            <p className="text-[#666] font-body text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto">
               Traditional cleaning fails. We replaced guesswork with intelligence.
-              <span className="text-white/80 font-medium"> Click any capability</span> to learn how.
+              <span className="text-[#1a1a1a] font-medium"> Click any capability</span> to learn how.
             </p>
           </div>
 
@@ -309,20 +309,20 @@ export default function AboutSection() {
                 {/* Icon circle */}
                 <div className="relative w-20 h-20 sm:w-24 sm:h-24 mb-4">
                   {/* Outer ring */}
-                  <div className="absolute inset-0 rounded-full border border-white/10 group-hover:border-[#C8A84E]/50 transition-all duration-500" />
+                  <div className="absolute inset-0 rounded-full border-2 border-[#C8A84E]/30 group-hover:border-[#C8A84E] transition-all duration-500" />
                   {/* Inner fill */}
-                  <div className="absolute inset-2 rounded-full bg-white/[0.03] group-hover:bg-[#C8A84E]/10 flex items-center justify-center transition-all duration-500 group-hover:scale-110">
+                  <div className="absolute inset-2 rounded-full bg-[#C8A84E]/5 group-hover:bg-[#C8A84E]/15 flex items-center justify-center transition-all duration-500 group-hover:scale-110">
                     <cap.icon
-                      className="w-8 h-8 sm:w-9 sm:h-9 text-white/50 group-hover:text-[#C8A84E] transition-colors duration-500"
-                      strokeWidth={1.2}
+                      className="w-8 h-8 sm:w-9 sm:h-9 text-[#C8A84E] group-hover:text-[#B8942E] transition-colors duration-500"
+                      strokeWidth={1.5}
                     />
                   </div>
                   {/* Pulse on hover */}
-                  <div className="absolute inset-0 rounded-full border border-[#C8A84E]/0 group-hover:border-[#C8A84E]/20 group-hover:scale-125 transition-all duration-700 opacity-0 group-hover:opacity-100" />
+                  <div className="absolute inset-0 rounded-full border border-[#C8A84E]/0 group-hover:border-[#C8A84E]/30 group-hover:scale-125 transition-all duration-700 opacity-0 group-hover:opacity-100" />
                 </div>
 
                 {/* Label */}
-                <span className="text-xs sm:text-sm font-bold tracking-wider uppercase text-white/60 font-body whitespace-pre-line leading-tight group-hover:text-[#C8A84E] transition-colors duration-300">
+                <span className="text-xs sm:text-sm font-bold tracking-wider uppercase text-[#333] font-body whitespace-pre-line leading-tight group-hover:text-[#C8A84E] transition-colors duration-300">
                   {cap.label}
                 </span>
 
@@ -336,15 +336,15 @@ export default function AboutSection() {
 
           {/* Bottom tagline bar */}
           <div
-            className={`flex flex-col sm:flex-row items-center justify-between gap-6 p-6 sm:p-8 border border-white/5 bg-white/[0.02] transition-all duration-700 delay-500 ${
+            className={`flex flex-col sm:flex-row items-center justify-between gap-6 p-6 sm:p-8 border border-[#C8A84E]/20 bg-[#faf8f2] transition-all duration-700 delay-500 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
             <div className="text-center sm:text-left">
-              <span className="text-white font-display text-xl sm:text-2xl">
+              <span className="text-[#1a1a1a] font-display text-xl sm:text-2xl">
                 20+ years. 500+ facilities. 98% retention.
               </span>
-              <p className="text-white/40 font-body text-sm mt-1">
+              <p className="text-[#666] font-body text-sm mt-1">
                 Next-generation cleaning built on systems, not promises.
               </p>
             </div>
