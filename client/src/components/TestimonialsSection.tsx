@@ -18,10 +18,10 @@ const testimonials = [
     stars: 5,
   },
   {
-    quote: "The StrikeTeam response during our flood emergency was incredible. They were on-site within hours and had us operational the next day. You can't put a price on that kind of reliability.",
-    name: "Rachel Thompson",
-    title: "Centre Manager",
-    company: "Westfield Shopping Centres",
+    quote: "Brian brings strong leadership, professionalism, and a solutions-focused mindset to every environment he works in. His vision through EagleWing reflects his commitment to innovation, accountability, and service excellence.",
+    name: "Titus Bodikala",
+    title: "Senior Building",
+    company: "Port Phillip",
     stars: 5,
   },
   {
