@@ -4,10 +4,10 @@ import { Quote, ChevronLeft, ChevronRight, Star } from "lucide-react";
 
 const testimonials = [
   {
-    quote: "EagleWing completely transformed how we manage our facility. Their SMART System\u2122 gave us visibility we never had before \u2014 and the quality has been consistently exceptional.",
-    name: "Sarah Mitchell",
-    title: "Facilities Manager",
-    company: "Meridian Corporate Group",
+    quote: "Brian Sylvester brings unmatched passion, professionalism, and innovation to the cleaning industry. His attention to detail, leadership, and commitment to high standards make him someone you can truly rely on.",
+    name: "Siva Sadasivam",
+    title: "Principal",
+    company: "D'Omkara Accountants",
     stars: 5,
   },
   {
