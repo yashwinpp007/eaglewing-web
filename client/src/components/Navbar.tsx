@@ -5,18 +5,19 @@ import { Menu, X, Phone } from "lucide-react";
 const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/eaglewing-logo-final_4f0a6c60.webp";
 
 const navLinks = [
-  { label: "About", href: "#about" },
   { label: "What We Do", href: "#services" },
   { label: "Where We Clean", href: "#sectors" },
-  { label: "Technology", href: "#technology" },
+  { label: "About", href: "/about" },
+  { label: "Technology", href: "/technology" },
   { label: "Process", href: "#process" },
   { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [location, navigate] = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -24,21 +25,37 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const [, navigate] = useLocation();
-
   const handleNavClick = (href: string) => {
     setMobileOpen(false);
-    if (href === "/blog") {
-      navigate("/blog");
+
+    // Route-based links (pages)
+    if (href.startsWith("/")) {
+      navigate(href);
+      window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
-    // If we're not on the home page, navigate home first
-    if (window.location.pathname !== "/") {
-      navigate("/" + href);
+
+    // Hash-based links (homepage sections)
+    if (location !== "/") {
+      // Navigate home first, then scroll to section
+      navigate("/");
+      setTimeout(() => {
+        const el = document.querySelector(href);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 300);
       return;
     }
+
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (location !== "/") {
+      navigate("/");
+    }
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -51,13 +68,10 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20 sm:h-32 lg:h-36">
-          {/* Logo — BIGGER */}
+          {/* Logo */}
           <a
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
+            href="/"
+            onClick={handleLogoClick}
             aria-label="EagleWing Facility Services — Home"
             className="flex items-center shrink-0"
           >
@@ -87,7 +101,7 @@ export default function Navbar() {
               1300 362 402
             </a>
             <button
-              onClick={() => handleNavClick("#contact")}
+              onClick={() => handleNavClick("/contact")}
               className="btn-gold px-6 py-2.5 text-sm font-bold tracking-wider uppercase font-body whitespace-nowrap"
             >
               Get a Quote
@@ -128,7 +142,7 @@ export default function Navbar() {
             1300 362 402
           </a>
           <button
-            onClick={() => handleNavClick("#contact")}
+            onClick={() => handleNavClick("/contact")}
             className="btn-gold w-full px-6 py-3 text-sm font-bold tracking-wider uppercase mt-4 font-body"
           >
             Get a Quote

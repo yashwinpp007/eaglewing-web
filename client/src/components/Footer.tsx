@@ -6,13 +6,13 @@ import { Facebook, Instagram, Linkedin, Youtube, Send } from "lucide-react";
 const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/eaglewing-logo-final_4f0a6c60.webp";
 
 const quickLinks = [
-  { label: "About Us", href: "#about" },
+  { label: "About Us", href: "/about" },
   { label: "Our Services", href: "#services" },
   { label: "Where We Clean", href: "#sectors" },
-  { label: "Technology", href: "#technology" },
+  { label: "Technology", href: "/technology" },
   { label: "Our Process", href: "#process" },
   { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const serviceLinks = [
@@ -48,11 +48,16 @@ export default function Footer() {
     if (href === "#") return;
     if (href.startsWith("/")) {
       navigate(href);
+      window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
     // If we're not on the home page, navigate home first
     if (window.location.pathname !== "/") {
-      navigate("/" + href);
+      navigate("/");
+      setTimeout(() => {
+        const el = document.querySelector(href);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 300);
       return;
     }
     const el = document.querySelector(href);
