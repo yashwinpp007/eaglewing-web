@@ -84,13 +84,13 @@ export default function CTASection() {
                 </div>
               </a>
 
-              <a href="mailto:info@eaglewingservices.com.au" className="flex items-center gap-4 group">
+              <a href="mailto:info@eaglewing.com.au" className="flex items-center gap-4 group">
                 <div className="w-12 h-12 flex items-center justify-center border border-[#C8A84E]/20 group-hover:border-[#C8A84E]/50 transition-colors duration-300">
                   <Mail className="w-5 h-5 text-[#C8A84E]" />
                 </div>
                 <div>
                   <span className="text-xs text-white/30 font-mono tracking-wider uppercase block">Email</span>
-                  <span className="text-white font-body group-hover:text-[#C8A84E] transition-colors">info@eaglewingservices.com.au</span>
+                  <span className="text-white font-body group-hover:text-[#C8A84E] transition-colors">info@eaglewing.com.au</span>
                 </div>
               </a>
 

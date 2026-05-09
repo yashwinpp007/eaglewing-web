@@ -105,7 +105,7 @@ export default function Contact() {
                   </a>
 
                   <a
-                    href="mailto:info@eaglewingservices.com.au"
+                    href="mailto:info@eaglewing.com.au"
                     className="flex items-start gap-4 group"
                   >
                     <div className="w-12 h-12 bg-[#C8A84E]/10 border border-[#C8A84E]/20 flex items-center justify-center flex-shrink-0">
@@ -116,7 +116,7 @@ export default function Contact() {
                         Email
                       </span>
                       <span className="text-white font-body text-lg group-hover:text-[#C8A84E] transition-colors">
-                        info@eaglewingservices.com.au
+                        info@eaglewing.com.au
                       </span>
                     </div>
                   </a>

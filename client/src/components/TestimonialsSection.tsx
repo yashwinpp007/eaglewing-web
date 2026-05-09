@@ -20,7 +20,7 @@ const testimonials = [
   {
     quote: "Brian brings strong leadership, professionalism, and a solutions-focused mindset to every environment he works in. His vision through EagleWing reflects his commitment to innovation, accountability, and service excellence.",
     name: "Titus Bodikala",
-    title: "Senior Building",
+    title: "Senior Building Officer",
     company: "Port Phillip",
     stars: 5,
   },
