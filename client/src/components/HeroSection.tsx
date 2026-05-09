@@ -103,7 +103,7 @@ export default function HeroSection() {
 
         {/* Content */}
         <div className="relative z-10 h-full flex items-end sm:items-center">
-          <div className="w-full px-6 sm:px-6 lg:px-12 pt-20 sm:pt-40 pb-36 sm:pb-0">
+          <div className="w-full px-6 sm:px-6 lg:px-12 pt-20 sm:pt-40 pb-44 sm:pb-40">
             <div className="max-w-2xl text-center sm:text-left">
               {/* Label */}
               <AnimatePresence mode="wait">
@@ -184,8 +184,8 @@ export default function HeroSection() {
 
         {/* Stats bar at bottom */}
         <div className="absolute bottom-0 left-0 right-0 z-10">
-          <div className="px-4 sm:px-6 lg:px-12 pb-4 sm:pb-8">
-            <div className="flex gap-6 sm:gap-12 pt-4 sm:pt-8 border-t border-white/10">
+          <div className="px-4 sm:px-6 lg:px-12 pb-6 sm:pb-10">
+            <div className="flex gap-6 sm:gap-12 pt-4 sm:pt-6 border-t border-white/10">
               {[
                 { value: "20+", label: "Years Experience" },
                 { value: "500+", label: "Facilities Managed" },
@@ -205,7 +205,7 @@ export default function HeroSection() {
         </div>
 
         {/* Slide indicators */}
-        <div className="absolute bottom-[140px] left-1/2 -translate-x-1/2 z-10 flex items-center gap-2 sm:hidden">
+        <div className="absolute bottom-[160px] left-1/2 -translate-x-1/2 z-10 flex items-center gap-2 sm:hidden">
           {slides.map((_, i) => (
             <button
               key={i}
