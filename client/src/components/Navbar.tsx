@@ -21,8 +21,8 @@ const technologyDropdown = [
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Solutions", href: "#services", dropdown: solutionsDropdown },
   { label: "About", href: "/about" },
+  { label: "Solutions", href: "#services", dropdown: solutionsDropdown },
   { label: "Technology", href: "/technology", dropdown: technologyDropdown },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
