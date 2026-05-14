@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight, Calendar, ArrowRight } from "lucide-react";
 
 const slides = [
   {
-    bg: "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/BkqAKKXyrgkSN3D58Kw86s/hero-slide-1-PAMy5u6G4uJYNCY7W8jrdN.webp",
+    bg: "/images/hero/hero-slide-1.webp",
     label: "Intelligent Facility Management",
     headline: ["Intelligent Cleaning.", "Measurable Results."],
     description: "We use smart systems, real data, and advanced cleaning methods to deliver consistent, high-quality results across every facility.",
@@ -12,7 +12,7 @@ const slides = [
     cta2: { label: "Book a Site Audit", icon: Calendar, href: "#contact" },
   },
   {
-    bg: "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/BkqAKKXyrgkSN3D58Kw86s/hero-slide-2-QH2BeyCMeiYXQYxHEwDRGR.webp",
+    bg: "/images/hero/hero-slide-2.webp",
     label: "Premium Facility Standards",
     headline: ["Your Facility Deserves", "Better Than Clean."],
     description: "EagleWing delivers a higher standard — precision-maintained environments that reflect your brand, protect your people, and impress your clients.",
@@ -20,7 +20,7 @@ const slides = [
     cta2: { label: "Get a Quote", icon: ArrowRight, href: "#contact" },
   },
   {
-    bg: "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/hero-modern-equipment-NKnFLgEwFUcuTYusKt8KZv.webp",
+    bg: "/images/hero/hero-slide-3.webp",
     label: "Trained & Verified Teams",
     headline: ["People You Can", "Trust. Every Time."],
     description: "Every EagleWing team member is background-checked, formally trained, and verified. We don't just send cleaners — we deploy professionals.",
@@ -28,7 +28,7 @@ const slides = [
     cta2: { label: "Book a Site Audit", icon: Calendar, href: "#contact" },
   },
   {
-    bg: "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/BkqAKKXyrgkSN3D58Kw86s/hero-slide-4-6cN5uKySQpsKifKuyCdhuM.webp",
+    bg: "/images/hero/hero-slide-4.webp",
     label: "Melbourne & Sydney",
     headline: ["Serving Australia's", "Leading Businesses."],
     description: "From corporate towers to medical centres and schools — EagleWing manages facilities across Melbourne and Sydney with consistent, data-driven results.",
@@ -36,7 +36,7 @@ const slides = [
     cta2: { label: "Get a Quote", icon: ArrowRight, href: "#contact" },
   },
   {
-    bg: "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/BkqAKKXyrgkSN3D58Kw86s/hero-slide-5-JNQKgwvVyX6SxYoLTVjCwp.webp",
+    bg: "/images/hero/hero-slide-5.webp",
     label: "Infection Control & Hygiene",
     headline: ["Medical-Grade Clean.", "Zero Compromise."],
     description: "Our infection control protocols meet the highest hygiene standards — protecting staff, patients, and visitors in healthcare, education, and high-traffic facilities.",
@@ -185,7 +185,7 @@ export default function HeroSection() {
         {/* Stats bar at bottom */}
         <div className="absolute bottom-0 left-0 right-0 z-10">
           <div className="px-4 sm:px-6 lg:px-12 pb-6 sm:pb-10">
-            <div className="flex gap-6 sm:gap-12 pt-4 sm:pt-6 border-t border-white/10">
+            <div className="flex gap-6 sm:gap-12 pt-10 sm:pt-16 border-t border-white/10">
               {[
                 { value: "20+", label: "Years Experience" },
                 { value: "500+", label: "Facilities Managed" },

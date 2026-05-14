@@ -3,7 +3,7 @@ import { useLocation } from "wouter";
 import { toast } from "sonner";
 import { Facebook, Instagram, Linkedin, Youtube, Send } from "lucide-react";
 
-const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/eaglewing-logo-final_4f0a6c60.webp";
+const LOGO_URL = "/images/logo/eaglewing-logo.webp";
 
 const quickLinks = [
   { label: "About Us", href: "/about" },
@@ -185,7 +185,7 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/intelligent-cleaning-logo-transparent_658103e2.png"
+              src="/images/logo/intelligent-cleaning-logo.png"
               alt="Intelligent Cleaning System"
               className="w-8 h-8 object-contain opacity-60"
             />

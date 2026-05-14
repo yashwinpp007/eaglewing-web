@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
 import { Menu, X, Phone } from "lucide-react";
 
-const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/eaglewing-logo-final_4f0a6c60.webp";
+const LOGO_URL = "/images/logo/eaglewing-logo.webp";
 
 const navLinks = [
   { label: "What We Do", href: "#services" },
@@ -67,7 +67,7 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 sm:h-32 lg:h-36">
+        <div className="flex items-center justify-between h-20 sm:h-24 lg:h-28">
           {/* Logo */}
           <a
             href="/"
@@ -78,7 +78,7 @@ export default function Navbar() {
             <img
               src={LOGO_URL}
               alt="EagleWing Facility Services — commercial cleaning Melbourne and Sydney"
-              className="h-16 sm:h-28 lg:h-36 w-auto object-contain"
+              className="h-12 sm:h-20 lg:h-24 w-auto object-contain"
             />
           </a>
 

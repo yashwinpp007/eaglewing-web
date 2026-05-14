@@ -1,8 +1,8 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Shield, FlaskConical, BarChart3, CheckCircle2, AlertTriangle, TrendingUp, FileText, Target } from "lucide-react";
 
-const AFTERCLEAN_HERO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/afterclean-hero-ji8Vs2oXsykZsnwrphJnuX.webp";
-const AFTERCLEAN_TESTING = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/afterclean-testing-mtUgMUuNhzRDUnqJ54c8j4.webp";
+const AFTERCLEAN_HERO = "/images/other/afterclean-hero.webp";
+const AFTERCLEAN_TESTING = "/images/other/afterclean-testing.webp";
 
 const auditIncludes = [
   { icon: FlaskConical, text: "Scheduled hygiene audits (quarterly or as agreed)" },

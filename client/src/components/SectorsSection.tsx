@@ -17,15 +17,15 @@ import {
 } from "lucide-react";
 
 const SECTOR_IMAGES = {
-  corporate: "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/sector-corporate-VLq4iGzGMZLoyQAc5iN2Xx.webp",
-  education: "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/sector-education-fMrtL6BoccuMDcGgzGVFPe.webp",
-  healthcare: "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/sector-healthcare-VVhYqzhpBudMhB45h6nBhu.webp",
-  government: "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/sector-government-k96cZXFaSBer7Kx8ki3iHK.webp",
-  retail: "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/sector-retail-o29EEfqeCqv2UCTYf3NwrQ.webp",
-  industrial: "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/sector-industrial-468KiL7Lgw7x466ARPZugd.webp",
-  transport: "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/sector-transport-DYdkQ9iuat2naGmwPVgvzb.webp",
-  hospitality: "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/sector-hospitality-6WSZEotSDFdLFP8n4L3SAy.webp",
-  airport: "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/sector-airport-Egri8i47M3EHxMiLmx9tYM.webp",
+  corporate: "/images/sectors/corporate.webp",
+  education: "/images/sectors/education.webp",
+  healthcare: "/images/sectors/healthcare.webp",
+  government: "/images/sectors/government.webp",
+  retail: "/images/sectors/retail.webp",
+  industrial: "/images/sectors/industrial.webp",
+  transport: "/images/sectors/transport.webp",
+  hospitality: "/images/sectors/hospitality.webp",
+  airport: "/images/sectors/airport.webp",
 };
 
 interface SectorDetail {

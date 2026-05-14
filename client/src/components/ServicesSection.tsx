@@ -17,16 +17,16 @@ import {
 } from "lucide-react";
 
 const SERVICE_IMAGES = {
-  contract: "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/service-contract-cleaning-VmRuWR4Jz34nsHxkUXsHwo.webp",
-  ai: "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/service-ai-smart-cleaning-ZJ2PKaZgmH82beXqvtpkNN.webp",
-  builders: "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/service-builders-cleaning-bAq4VNWztvCuCgANqcikwx.webp",
-  infection: "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/service-infection-control-XqQKaypwVQ4pJHHouCt5Ri.webp",
-  window: "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/service-window-cleaning-CTiJkurnBbGAdnnP43ucBZ.webp",
-  steam: "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/service-steam-cleaning-QSAkx2dYaGgNPqFsxgVsGk.webp",
-  floor: "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/service-floor-polishing-n6K2TP8xGAYMXSykr35ax6.webp",
-  pressure: "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/service-pressure-washing-mT2j8b2pEgBqfg6pJbgfdG.webp",
-  washroom: "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/service-washroom-hygiene-hmBAqgLiNiLaQFeb3xhVrp.webp",
-  healthcare: "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/service-healthcare-DCXtufjmDsuwd6yvXYJVZ5.webp",
+  contract: "/images/services/contract-cleaning.webp",
+  ai: "/images/services/ai-smart-cleaning.webp",
+  builders: "/images/services/builders-cleaning.webp",
+  infection: "/images/services/infection-control.webp",
+  window: "/images/services/window-cleaning.webp",
+  steam: "/images/services/steam-cleaning.webp",
+  floor: "/images/services/floor-polishing.webp",
+  pressure: "/images/services/pressure-washing.webp",
+  washroom: "/images/services/washroom-hygiene.webp",
+  healthcare: "/images/services/healthcare.webp",
 };
 
 interface ServiceDetail {

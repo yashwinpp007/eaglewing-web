@@ -1,6 +1,6 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
-const BRIAN_PHOTO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/brian-sylvester_98d3598b.png";
+const BRIAN_PHOTO = "/images/team/brian-sylvester.png";
 
 export default function FounderSection() {
   const { ref, isVisible } = useScrollAnimation();

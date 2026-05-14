@@ -13,7 +13,7 @@ import {
   Sparkles,
 } from "lucide-react";
 
-const WING_LOGO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/intelligent-cleaning-logo-transparent_658103e2.png";
+const WING_LOGO = "/images/logo/intelligent-cleaning-logo.png";
 
 interface Capability {
   icon: typeof Brain;
@@ -29,12 +29,12 @@ interface Capability {
 }
 
 const CAPABILITY_IMAGES = {
-  intelligent: "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/BkqAKKXyrgkSN3D58Kw86s/pillar-smart-system-hBnBCZXCSgYayWQhcjLXcB.webp",
-  tracking: "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/BkqAKKXyrgkSN3D58Kw86s/technology-dashboard-XVhzpWFjWvNh2DAwTMXhqk.webp",
-  verified: "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/BkqAKKXyrgkSN3D58Kw86s/pillar-cleanproof-fYcGHMX3awT7RDBHa3nwsZ.webp",
-  teams: "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/hero-modern-equipment-NKnFLgEwFUcuTYusKt8KZv.webp",
-  sustainable: "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/BkqAKKXyrgkSN3D58Kw86s/pillar-sustainable-CmUhkSvMkrVkLW9WPyLhfL.webp",
-  equipment: "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/eaglewing-equipment_5e1ef2da.png",
+  intelligent: "/images/pillars/smart-system.webp",
+  tracking: "/images/technology/dashboard.webp",
+  verified: "/images/pillars/cleanproof.webp",
+  teams: "/images/hero/hero-slide-3.webp",
+  sustainable: "/images/pillars/sustainable.webp",
+  equipment: "/images/other/eaglewing-equipment.png",
 };
 
 const capabilities: Capability[] = [

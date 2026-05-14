@@ -3,7 +3,7 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 import { toast } from "sonner";
 
-const CTA_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/BkqAKKXyrgkSN3D58Kw86s/cta-bg-hN43oF9rye3ff2pWPMgmQz.webp";
+const CTA_BG = "/images/other/cta-bg.webp";
 
 const serviceOptions = [
   "Contract Cleaning",

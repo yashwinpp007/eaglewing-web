@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { BarChart3, MapPin, Camera, Bell, Clock, Shield, X, CheckCircle, ArrowRight } from "lucide-react";
 
-const DASHBOARD_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/BkqAKKXyrgkSN3D58Kw86s/technology-dashboard-XVhzpWFjWvNh2DAwTMXhqk.webp";
+const DASHBOARD_IMG = "/images/technology/dashboard.webp";
 
 interface FeatureDetail {
   icon: typeof BarChart3;
@@ -251,7 +251,7 @@ export default function TechnologySection() {
             }`}
           >
             <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/intelligent-cleaning-logo-transparent_658103e2.png"
+              src="/images/logo/intelligent-cleaning-logo.png"
               alt="Intelligent Cleaning System"
               className="w-16 h-16 sm:w-20 sm:h-20 object-contain mx-auto mb-4 opacity-80"
             />

@@ -1,12 +1,12 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
-const PILLAR_SMART = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/BkqAKKXyrgkSN3D58Kw86s/pillar-smart-system-hBnBCZXCSgYayWQhcjLXcB.webp";
-const PILLAR_DYNAMIC = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/BkqAKKXyrgkSN3D58Kw86s/pillar-dynamic-flow-PJfZsjf8s2jvGCfwQRfHzT.webp";
+const PILLAR_SMART = "/images/pillars/smart-system.webp";
+const PILLAR_DYNAMIC = "/images/pillars/dynamic-flow.webp";
 // CHANGED: "People You Can Trust" now uses the futuristic equipment image
-const PILLAR_TEAMS = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/hero-modern-equipment-NKnFLgEwFUcuTYusKt8KZv.webp";
-const PILLAR_CLEANPROOF = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/BkqAKKXyrgkSN3D58Kw86s/pillar-cleanproof-fYcGHMX3awT7RDBHa3nwsZ.webp";
-const PILLAR_SUSTAINABLE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/BkqAKKXyrgkSN3D58Kw86s/pillar-sustainable-CmUhkSvMkrVkLW9WPyLhfL.webp";
-const PILLAR_EQUIPMENT = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/eaglewing-equipment_5e1ef2da.png";
+const PILLAR_TEAMS = "/images/hero/hero-slide-3.webp";
+const PILLAR_CLEANPROOF = "/images/pillars/cleanproof.webp";
+const PILLAR_SUSTAINABLE = "/images/pillars/sustainable.webp";
+const PILLAR_EQUIPMENT = "/images/other/eaglewing-equipment.png";
 
 const pillars = [
   {
@@ -115,7 +115,7 @@ export default function PillarsSection() {
           }`}
         >
           <img
-            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/intelligent-cleaning-logo-transparent_658103e2.png"
+            src="/images/logo/intelligent-cleaning-logo.png"
             alt="Intelligent Cleaning System"
             className="w-24 h-24 sm:w-32 sm:h-32 object-contain mx-auto mb-6 opacity-90"
           />
