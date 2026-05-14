@@ -185,7 +185,7 @@ export default function HeroSection() {
         {/* Stats bar at bottom */}
         <div className="absolute bottom-0 left-0 right-0 z-10">
           <div className="px-4 sm:px-6 lg:px-12 pb-6 sm:pb-10">
-            <div className="flex gap-6 sm:gap-12 pt-10 sm:pt-16 border-t border-white/10">
+            <div className="flex gap-6 sm:gap-12 pt-10 sm:pt-16">
               {[
                 { value: "20+", label: "Years Experience" },
                 { value: "500+", label: "Facilities Managed" },
