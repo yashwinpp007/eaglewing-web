@@ -3,7 +3,6 @@ import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
 import SectorsSection from "@/components/SectorsSection";
 import AboutSection from "@/components/AboutSection";
-import TechnologySection from "@/components/TechnologySection";
 import ProcessSection from "@/components/ProcessSection";
 import AfterCleanSection from "@/components/AfterCleanSection";
 import NanocynSection from "@/components/NanocynSection";
@@ -19,7 +18,6 @@ export default function Home() {
       <ServicesSection />
       <SectorsSection />
       <AboutSection />
-      <TechnologySection />
       <ProcessSection />
       <AfterCleanSection />
       <NanocynSection />

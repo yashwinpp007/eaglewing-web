@@ -1,14 +1,21 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLocation } from "wouter";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, ChevronDown } from "lucide-react";
 
 const LOGO_URL = "/images/logo/eaglewing-logo.webp";
+
+const technologyDropdown = [
+  { label: "Our Technology", href: "/technology" },
+  { label: "EagleWing Command™", href: "/technology#technology" },
+  { label: "After Clean™", href: "/technology#afterclean" },
+  { label: "Our Commitment", href: "/technology#sustainability" },
+];
 
 const navLinks = [
   { label: "What We Do", href: "#services" },
   { label: "Where We Clean", href: "#sectors" },
   { label: "About", href: "/about" },
-  { label: "Technology", href: "/technology" },
+  { label: "Technology", href: "/technology", dropdown: technologyDropdown },
   { label: "Process", href: "#process" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
@@ -17,7 +24,10 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [techOpen, setTechOpen] = useState(false);
+  const [mobileTechOpen, setMobileTechOpen] = useState(false);
   const [location, navigate] = useLocation();
+  const techRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -27,6 +37,18 @@ export default function Navbar() {
 
   const handleNavClick = (href: string) => {
     setMobileOpen(false);
+    setTechOpen(false);
+
+    // Route with hash (e.g. /technology#afterclean)
+    if (href.includes("#") && href.startsWith("/")) {
+      const [path, hash] = href.split("#");
+      navigate(path);
+      setTimeout(() => {
+        const el = document.getElementById(hash);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 350);
+      return;
+    }
 
     // Route-based links (pages)
     if (href.startsWith("/")) {
@@ -37,7 +59,6 @@ export default function Navbar() {
 
     // Hash-based links (homepage sections)
     if (location !== "/") {
-      // Navigate home first, then scroll to section
       navigate("/");
       setTimeout(() => {
         const el = document.querySelector(href);
@@ -84,15 +105,60 @@ export default function Navbar() {
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <button
-                key={link.href}
-                onClick={() => handleNavClick(link.href)}
-                className="text-[13px] font-medium tracking-wider uppercase text-white/70 hover:text-[#C8A84E] transition-colors duration-300 font-body whitespace-nowrap"
-              >
-                {link.label}
-              </button>
-            ))}
+            {navLinks.map((link) =>
+              link.dropdown ? (
+                <div
+                  key={link.href}
+                  ref={techRef}
+                  className="relative"
+                  onMouseEnter={() => setTechOpen(true)}
+                  onMouseLeave={() => setTechOpen(false)}
+                >
+                  <button
+                    onClick={() => handleNavClick(link.href)}
+                    className="flex items-center gap-1 text-[13px] font-medium tracking-wider uppercase text-white/70 hover:text-[#C8A84E] transition-colors duration-300 font-body whitespace-nowrap"
+                  >
+                    {link.label}
+                    <ChevronDown
+                      className={`w-3.5 h-3.5 transition-transform duration-300 ${techOpen ? "rotate-180 text-[#C8A84E]" : ""}`}
+                    />
+                  </button>
+
+                  {/* Dropdown panel */}
+                  <div
+                    className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 w-52 transition-all duration-200 ${
+                      techOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"
+                    }`}
+                  >
+                    {/* Arrow */}
+                    <div className="flex justify-center mb-1">
+                      <div className="w-2.5 h-2.5 bg-[#0A0A0A] border-l border-t border-[#C8A84E]/20 rotate-45" />
+                    </div>
+                    <div className="bg-[#0A0A0A] border border-[#C8A84E]/20 shadow-xl shadow-black/40 overflow-hidden">
+                      {link.dropdown.map((item, i) => (
+                        <button
+                          key={item.href}
+                          onClick={() => handleNavClick(item.href)}
+                          className={`block w-full text-left px-5 py-3 text-[12px] font-medium tracking-wider uppercase text-white/60 hover:text-[#C8A84E] hover:bg-[#C8A84E]/5 transition-colors duration-200 font-body ${
+                            i !== 0 ? "border-t border-white/5" : ""
+                          }`}
+                        >
+                          {item.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <button
+                  key={link.href}
+                  onClick={() => handleNavClick(link.href)}
+                  className="text-[13px] font-medium tracking-wider uppercase text-white/70 hover:text-[#C8A84E] transition-colors duration-300 font-body whitespace-nowrap"
+                >
+                  {link.label}
+                </button>
+              )
+            )}
             <a
               href="tel:1300362402"
               className="flex items-center gap-2 text-[13px] font-medium tracking-wider text-white/70 hover:text-[#C8A84E] transition-colors duration-300 whitespace-nowrap"
@@ -125,15 +191,40 @@ export default function Navbar() {
         }`}
       >
         <div className="bg-[#0A0A0A]/98 backdrop-blur-md border-t border-[#C8A84E]/10 px-4 py-6 space-y-4">
-          {navLinks.map((link) => (
-            <button
-              key={link.href}
-              onClick={() => handleNavClick(link.href)}
-              className="block w-full text-left text-base font-medium tracking-wider uppercase text-white/70 hover:text-[#C8A84E] transition-colors py-2 font-body"
-            >
-              {link.label}
-            </button>
-          ))}
+          {navLinks.map((link) =>
+            link.dropdown ? (
+              <div key={link.href}>
+                <button
+                  onClick={() => setMobileTechOpen(!mobileTechOpen)}
+                  className="flex items-center justify-between w-full text-left text-base font-medium tracking-wider uppercase text-white/70 hover:text-[#C8A84E] transition-colors py-2 font-body"
+                >
+                  {link.label}
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${mobileTechOpen ? "rotate-180 text-[#C8A84E]" : ""}`} />
+                </button>
+                <div className={`overflow-hidden transition-all duration-300 ${mobileTechOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"}`}>
+                  <div className="pl-4 border-l border-[#C8A84E]/20 mt-1 space-y-1">
+                    {link.dropdown.map((item) => (
+                      <button
+                        key={item.href}
+                        onClick={() => { setMobileOpen(false); handleNavClick(item.href); }}
+                        className="block w-full text-left text-sm font-medium tracking-wider uppercase text-white/50 hover:text-[#C8A84E] transition-colors py-2 font-body"
+                      >
+                        {item.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <button
+                key={link.href}
+                onClick={() => handleNavClick(link.href)}
+                className="block w-full text-left text-base font-medium tracking-wider uppercase text-white/70 hover:text-[#C8A84E] transition-colors py-2 font-body"
+              >
+                {link.label}
+              </button>
+            )
+          )}
           <a
             href="tel:1300362402"
             className="flex items-center gap-2 text-base font-medium tracking-wider text-white/70 hover:text-[#C8A84E] transition-colors py-2"
