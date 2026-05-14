@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import TechnologySection from "@/components/TechnologySection";
 import AfterCleanSection from "@/components/AfterCleanSection";
+import NanocynSection from "@/components/NanocynSection";
 import SustainabilitySection from "@/components/SustainabilitySection";
 import Footer from "@/components/Footer";
 import { ArrowRight, Cpu, Shield, Leaf } from "lucide-react";
@@ -96,6 +97,9 @@ export default function Technology() {
       <div id="afterclean">
         <AfterCleanSection />
       </div>
+
+      {/* Nanocyn — Disinfection Technology */}
+      <NanocynSection />
 
       {/* Sustainability */}
       <div id="sustainability">
