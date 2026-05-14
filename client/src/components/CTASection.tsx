@@ -1,4 +1,6 @@
 import { useState } from "react";
+
+const FORMSPREE_URL = "https://formspree.io/f/mlgzkajw";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 import { toast } from "sonner";
@@ -29,13 +31,38 @@ export default function CTASection() {
     service: "",
     message: "",
   });
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Thank you! We'll be in touch within 24 hours.", {
-      description: "Our team will review your enquiry and prepare a tailored response.",
-    });
-    setForm({ name: "", email: "", phone: "", company: "", service: "", message: "" });
+    setSubmitting(true);
+    try {
+      const res = await fetch(FORMSPREE_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          company: form.company,
+          service: form.service,
+          message: form.message,
+        }),
+      });
+      const data = await res.json();
+      if (data.ok) {
+        toast.success("Thank you! We'll be in touch within 24 hours.", {
+          description: "Our team will review your enquiry and prepare a tailored response.",
+        });
+        setForm({ name: "", email: "", phone: "", company: "", service: "", message: "" });
+      } else {
+        toast.error("Something went wrong. Please try again or call us directly.");
+      }
+    } catch {
+      toast.error("Failed to send. Please check your connection and try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -197,10 +224,11 @@ export default function CTASection() {
 
               <button
                 type="submit"
-                className="btn-gold w-full px-8 py-4 text-sm font-bold tracking-wider uppercase font-body flex items-center justify-center gap-2"
+                disabled={submitting}
+                className="btn-gold w-full px-8 py-4 text-sm font-bold tracking-wider uppercase font-body flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 <Send className="w-4 h-4" />
-                Submit Enquiry
+                {submitting ? "Sending..." : "Submit Enquiry"}
               </button>
             </form>
           </div>

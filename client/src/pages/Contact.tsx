@@ -1,6 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useState } from "react";
+
+const FORMSPREE_URL = "https://formspree.io/f/mlgzkajw";
 import { toast } from "sonner";
 import {
   Phone,
@@ -34,11 +36,36 @@ export default function Contact() {
     service: "",
     message: "",
   });
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Thank you! We'll be in touch within 24 hours.");
-    setFormData({ name: "", email: "", phone: "", company: "", service: "", message: "" });
+    setSubmitting(true);
+    try {
+      const res = await fetch(FORMSPREE_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          service: formData.service,
+          message: formData.message,
+        }),
+      });
+      const data = await res.json();
+      if (data.ok) {
+        toast.success("Thank you! We'll be in touch within 24 hours.");
+        setFormData({ name: "", email: "", phone: "", company: "", service: "", message: "" });
+      } else {
+        toast.error("Something went wrong. Please try again or call us directly.");
+      }
+    } catch {
+      toast.error("Failed to send. Please check your connection and try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -265,11 +292,12 @@ export default function Contact() {
 
                   <button
                     type="submit"
-                    className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-[#C8A84E] to-[#E8D48B] text-black font-bold text-sm tracking-wider uppercase font-body hover:shadow-lg hover:shadow-[#C8A84E]/20 transition-all duration-300"
+                    disabled={submitting}
+                    className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-[#C8A84E] to-[#E8D48B] text-black font-bold text-sm tracking-wider uppercase font-body hover:shadow-lg hover:shadow-[#C8A84E]/20 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
                   >
                     <Send className="w-4 h-4" />
-                    Submit Enquiry
-                    <ArrowRight className="w-4 h-4" />
+                    {submitting ? "Sending..." : "Submit Enquiry"}
+                    {!submitting && <ArrowRight className="w-4 h-4" />}
                   </button>
                 </form>
               </div>
