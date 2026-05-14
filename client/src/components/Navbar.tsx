@@ -12,11 +12,11 @@ const technologyDropdown = [
 ];
 
 const navLinks = [
+  { label: "Home", href: "/" },
   { label: "What We Do", href: "#services" },
   { label: "Where We Clean", href: "#sectors" },
   { label: "About", href: "/about" },
   { label: "Technology", href: "/technology", dropdown: technologyDropdown },
-  { label: "Process", href: "#process" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
