@@ -4,6 +4,13 @@ import { Menu, X, Phone, ChevronDown } from "lucide-react";
 
 const LOGO_URL = "/images/logo/eaglewing-logo.webp";
 
+const solutionsDropdown = [
+  { label: "What We Do", href: "#services" },
+  { label: "Where We Clean", href: "#sectors" },
+  { label: "Why EagleWing", href: "#about" },
+  { label: "How It Works", href: "#process" },
+];
+
 const technologyDropdown = [
   { label: "Our Technology", href: "/technology" },
   { label: "EagleWing Command™", href: "/technology#technology" },
@@ -14,8 +21,7 @@ const technologyDropdown = [
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "What We Do", href: "#services" },
-  { label: "Where We Clean", href: "#sectors" },
+  { label: "Solutions", href: "#services", dropdown: solutionsDropdown },
   { label: "About", href: "/about" },
   { label: "Technology", href: "/technology", dropdown: technologyDropdown },
   { label: "Blog", href: "/blog" },
@@ -25,8 +31,8 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [techOpen, setTechOpen] = useState(false);
-  const [mobileTechOpen, setMobileTechOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileOpenDropdown, setMobileOpenDropdown] = useState<string | null>(null);
   const [location, navigate] = useLocation();
   const techRef = useRef<HTMLDivElement>(null);
 
@@ -38,7 +44,7 @@ export default function Navbar() {
 
   const handleNavClick = (href: string) => {
     setMobileOpen(false);
-    setTechOpen(false);
+    setOpenDropdown(null);
 
     // Route with hash (e.g. /technology#afterclean)
     if (href.includes("#") && href.startsWith("/")) {
@@ -109,11 +115,10 @@ export default function Navbar() {
             {navLinks.map((link) =>
               link.dropdown ? (
                 <div
-                  key={link.href}
-                  ref={techRef}
+                  key={link.label}
                   className="relative"
-                  onMouseEnter={() => setTechOpen(true)}
-                  onMouseLeave={() => setTechOpen(false)}
+                  onMouseEnter={() => setOpenDropdown(link.label)}
+                  onMouseLeave={() => setOpenDropdown(null)}
                 >
                   <button
                     onClick={() => handleNavClick(link.href)}
@@ -121,14 +126,14 @@ export default function Navbar() {
                   >
                     {link.label}
                     <ChevronDown
-                      className={`w-3.5 h-3.5 transition-transform duration-300 ${techOpen ? "rotate-180 text-[#C8A84E]" : ""}`}
+                      className={`w-3.5 h-3.5 transition-transform duration-300 ${openDropdown === link.label ? "rotate-180 text-[#C8A84E]" : ""}`}
                     />
                   </button>
 
                   {/* Dropdown panel */}
                   <div
                     className={`absolute top-full left-1/2 -translate-x-1/2 pt-3 w-52 transition-all duration-200 ${
-                      techOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"
+                      openDropdown === link.label ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none"
                     }`}
                   >
                     {/* Arrow */}
@@ -194,15 +199,15 @@ export default function Navbar() {
         <div className="bg-[#0A0A0A]/98 backdrop-blur-md border-t border-[#C8A84E]/10 px-4 py-6 space-y-4">
           {navLinks.map((link) =>
             link.dropdown ? (
-              <div key={link.href}>
+              <div key={link.label}>
                 <button
-                  onClick={() => setMobileTechOpen(!mobileTechOpen)}
+                  onClick={() => setMobileOpenDropdown(mobileOpenDropdown === link.label ? null : link.label)}
                   className="flex items-center justify-between w-full text-left text-base font-medium tracking-wider uppercase text-white/70 hover:text-[#C8A84E] transition-colors py-2 font-body"
                 >
                   {link.label}
-                  <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${mobileTechOpen ? "rotate-180 text-[#C8A84E]" : ""}`} />
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${mobileOpenDropdown === link.label ? "rotate-180 text-[#C8A84E]" : ""}`} />
                 </button>
-                <div className={`overflow-hidden transition-all duration-300 ${mobileTechOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"}`}>
+                <div className={`overflow-hidden transition-all duration-300 ${mobileOpenDropdown === link.label ? "max-h-60 opacity-100" : "max-h-0 opacity-0"}`}>
                   <div className="pl-4 border-l border-[#C8A84E]/20 mt-1 space-y-1">
                     {link.dropdown.map((item) => (
                       <button
