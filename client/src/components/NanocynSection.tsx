@@ -35,7 +35,7 @@ export default function NanocynSection() {
 
   return (
     <>
-      <section className="relative py-24 sm:py-32 bg-[#0A0A0A] overflow-hidden">
+      <section id="nanocyn" className="relative py-24 sm:py-32 bg-[#0A0A0A] overflow-hidden">
         {/* Subtle background pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
