@@ -38,6 +38,13 @@ const testimonials = [
     company: "Knight Frank Australia",
     stars: 5,
   },
+  {
+    quote: "Brian is passionate about improving the cleaning industry through innovation and practical problem-solving. His leadership, vision, and commitment to excellence are reflected in the company he leads. I would highly recommend EagleWing Facility Services.",
+    name: "Mark Helps",
+    title: "Chairman",
+    company: "Golden Logistics",
+    stars: 5,
+  },
 ];
 
 export default function TestimonialsSection() {
