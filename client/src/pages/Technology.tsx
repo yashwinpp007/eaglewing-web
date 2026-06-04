@@ -1,10 +1,8 @@
 import Navbar from "@/components/Navbar";
 import TechnologySection from "@/components/TechnologySection";
-import AfterCleanSection from "@/components/AfterCleanSection";
-import NanocynSection from "@/components/NanocynSection";
 import SustainabilitySection from "@/components/SustainabilitySection";
 import Footer from "@/components/Footer";
-import { ArrowRight, Cpu, Shield, Leaf } from "lucide-react";
+import { ArrowRight, Cpu, Leaf } from "lucide-react";
 
 export default function Technology() {
   return (
@@ -54,12 +52,6 @@ export default function Technology() {
                 anchor: "#technology",
               },
               {
-                icon: Shield,
-                title: "After Clean™",
-                desc: "Surface bacterial testing and hygiene audits that prove cleaning performance.",
-                anchor: "#afterclean",
-              },
-              {
                 icon: Leaf,
                 title: "Sustainable Systems",
                 desc: "Eco-certified products and water-efficient methods across all operations.",
@@ -92,14 +84,6 @@ export default function Technology() {
 
       {/* EagleWing Command */}
       <TechnologySection />
-
-      {/* After Clean */}
-      <div id="afterclean">
-        <AfterCleanSection />
-      </div>
-
-      {/* Nanocyn — Disinfection Technology */}
-      <NanocynSection />
 
       {/* Sustainability */}
       <div id="sustainability">

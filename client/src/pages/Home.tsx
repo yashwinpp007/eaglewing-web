@@ -5,6 +5,8 @@ import SectorsSection from "@/components/SectorsSection";
 import AboutSection from "@/components/AboutSection";
 import ProcessSection from "@/components/ProcessSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import AfterCleanSection from "@/components/AfterCleanSection";
+import NanocynSection from "@/components/NanocynSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
@@ -18,6 +20,8 @@ export default function Home() {
       <AboutSection />
       <ProcessSection />
       <TestimonialsSection />
+      <AfterCleanSection />
+      <NanocynSection />
       <CTASection />
       <Footer />
     </div>

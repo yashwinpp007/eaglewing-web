@@ -14,8 +14,8 @@ const solutionsDropdown = [
 const technologyDropdown = [
   { label: "Our Technology", href: "/technology" },
   { label: "EagleWing Command™", href: "/technology#technology" },
-  { label: "After Clean™", href: "/technology#afterclean" },
-  { label: "Nanocyn", href: "/technology#nanocyn" },
+  { label: "After Clean™", href: "/#afterclean" },
+  { label: "Nanocyn", href: "/#nanocyn" },
   { label: "Our Commitment", href: "/technology#sustainability" },
 ];
 
