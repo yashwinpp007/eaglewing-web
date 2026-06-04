@@ -166,6 +166,20 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes("node_modules")) {
+            if (id.includes("react") || id.includes("react-dom")) return "react-vendor";
+            if (id.includes("framer-motion")) return "framer-motion";
+            if (id.includes("@radix-ui")) return "radix-ui";
+            if (id.includes("recharts") || id.includes("d3-")) return "charts";
+            return "vendor";
+          }
+        },
+      },
+    },
   },
   server: {
     port: 3000,
