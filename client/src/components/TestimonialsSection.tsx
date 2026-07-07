@@ -25,20 +25,6 @@ const testimonials = [
     stars: 5,
   },
   {
-    quote: "As a school principal, hygiene and safety are non-negotiable. EagleWing's infection control protocols and child-safe products give me complete peace of mind.",
-    name: "David Nguyen",
-    title: "Principal",
-    company: "Bayside Grammar School",
-    stars: 5,
-  },
-  {
-    quote: "Their technology platform is genuinely impressive. Real-time dashboards, photo verification, automated reporting \u2014 it's exactly what modern facility management should look like.",
-    name: "Amanda Foster",
-    title: "Property Manager",
-    company: "Knight Frank Australia",
-    stars: 5,
-  },
-  {
     quote: "Brian is passionate about improving the cleaning industry through innovation and practical problem-solving. His leadership, vision, and commitment to excellence are reflected in the company he leads. I would highly recommend EagleWing Facility Services.",
     name: "Mark Helps",
     title: "Chairman",
