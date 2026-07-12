@@ -181,6 +181,7 @@ export default function Navbar() {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
             className="lg:hidden text-white/80 hover:text-[#C8A84E] transition-colors"
           >
             {mobileOpen ? <X size={28} /> : <Menu size={28} />}
