@@ -104,6 +104,8 @@ export default function Navbar() {
             <img
               src={LOGO_URL}
               alt="EagleWing Facility Services — commercial cleaning Melbourne and Sydney"
+              width={200}
+              height={96}
               className="h-12 sm:h-20 lg:h-24 w-auto object-contain"
             />
           </a>

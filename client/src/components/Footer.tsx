@@ -82,6 +82,8 @@ export default function Footer() {
               <img
                 src={LOGO_URL}
                 alt="EagleWing Facility Services"
+                width={200}
+                height={112}
                 className="h-28 w-auto object-contain mb-6"
               />
             </a>
@@ -186,8 +188,10 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <img
-              src="/images/logo/intelligent-cleaning-logo.png"
+              src="/images/logo/intelligent-cleaning-logo.webp"
               alt="Intelligent Cleaning System"
+              width={32}
+              height={32}
               className="w-8 h-8 object-contain opacity-60"
             />
             <p className="text-xs text-white/20 font-body">

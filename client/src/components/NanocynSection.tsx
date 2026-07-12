@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Shield, Droplets, Leaf, CheckCircle, X, ArrowRight, Sparkles } from "lucide-react";
 
-const NANOCYN_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663485776203/dNwLKZfEuqHVi87Tg2QnZX/nanocyn-professional_65ac37fb.png";
+const NANOCYN_IMG = "/images/other/nanocyn-professional.webp";
 
 const benefits = [
   { icon: Shield, title: "Hospital-Grade", desc: "TGA-listed disinfectant & sanitiser" },
