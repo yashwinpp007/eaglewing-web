@@ -151,6 +151,7 @@ function FeatureModal({
         {/* Hero image */}
         <div className="relative w-full aspect-[16/7] overflow-hidden">
           <img
+                  loading="lazy"
             src={feature.image}
             alt={feature.title}
             className="w-full h-full object-cover"
@@ -251,6 +252,7 @@ export default function TechnologySection() {
             }`}
           >
             <img
+                  loading="lazy"
               src="/images/logo/intelligent-cleaning-logo.png"
               alt="Intelligent Cleaning System"
               className="w-16 h-16 sm:w-20 sm:h-20 object-contain mx-auto mb-4 opacity-80"
@@ -271,6 +273,7 @@ export default function TechnologySection() {
           >
             <div className="relative overflow-hidden shadow-2xl shadow-black/10 border border-black/5">
               <img
+                  loading="lazy"
                 src={DASHBOARD_IMG}
                 alt="EagleWing Command dashboard showing real-time facility analytics"
                 className="w-full h-auto"

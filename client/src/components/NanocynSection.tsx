@@ -107,6 +107,7 @@ export default function NanocynSection() {
                 <div className="absolute -bottom-3 -right-3 w-16 h-16 border-b-2 border-r-2 border-[#C8A84E]/40" />
                 
                 <img
+                  loading="lazy"
                   src={NANOCYN_IMG}
                   alt="Nanocyn Hospital-Grade Disinfectant & Sanitiser Product Range"
                   className="w-full h-auto object-contain relative z-10"
@@ -138,6 +139,7 @@ export default function NanocynSection() {
             {/* Hero image */}
             <div className="relative h-64 sm:h-80 overflow-hidden bg-gradient-to-b from-[#1a1a1a] to-[#0A0A0A]">
               <img
+                  loading="lazy"
                 src={NANOCYN_IMG}
                 alt="Nanocyn Product Range"
                 className="w-full h-full object-contain p-8"

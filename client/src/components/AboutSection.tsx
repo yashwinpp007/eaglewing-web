@@ -229,6 +229,7 @@ function CapabilityModal({
         {/* Hero image */}
         <div className="relative w-full aspect-[16/7] overflow-hidden">
           <img
+                  loading="lazy"
             src={capability.image}
             alt={capability.title}
             className="w-full h-full object-cover"
@@ -410,7 +411,8 @@ export default function AboutSection() {
 
             <div className="relative flex flex-col sm:flex-row items-center justify-between gap-6">
               <div className="flex items-center gap-6 text-center sm:text-left">
-                <img src={WING_LOGO} alt="EagleWing" className="w-14 h-14 object-contain hidden sm:block" />
+                <img
+                  loading="lazy" src={WING_LOGO} alt="EagleWing" className="w-14 h-14 object-contain hidden sm:block" />
                 <div>
                   <span className="text-white font-display text-xl sm:text-2xl block">
                     20+ years. 500+ facilities. 98% retention.

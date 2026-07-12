@@ -216,6 +216,7 @@ function SectorModal({
         {/* Hero image */}
         <div className="relative w-full aspect-[16/7] overflow-hidden">
           <img
+                  loading="lazy"
             src={sector.image}
             alt={sector.title}
             className="w-full h-full object-cover"

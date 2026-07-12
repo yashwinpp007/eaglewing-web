@@ -25,6 +25,7 @@ export default function FounderSection() {
               <div className="absolute -inset-2 bg-gradient-to-br from-[#C8A84E]/30 via-transparent to-[#C8A84E]/20 blur-sm" />
               <div className="relative overflow-hidden border border-[#C8A84E]/20">
                 <img
+                  loading="lazy"
                   src={BRIAN_PHOTO}
                   alt="Brian Sylvester — Founder of EagleWing Facility Services"
                   className="w-full max-w-md h-auto object-cover"

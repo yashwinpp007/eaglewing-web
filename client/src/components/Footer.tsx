@@ -80,6 +80,7 @@ export default function Footer() {
               }}
             >
               <img
+                  loading="lazy"
                 src={LOGO_URL}
                 alt="EagleWing Facility Services"
                 width={200}
@@ -188,6 +189,7 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <img
+                  loading="lazy"
               src="/images/logo/intelligent-cleaning-logo.webp"
               alt="Intelligent Cleaning System"
               width={32}

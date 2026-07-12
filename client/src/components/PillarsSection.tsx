@@ -61,6 +61,7 @@ function PillarCard({ pillar, index }: { pillar: typeof pillars[0]; index: numbe
       {/* Image */}
       <div className={`relative h-64 sm:h-80 lg:h-[400px] ${isReversed ? "lg:order-2" : ""}`}>
         <img
+                  loading="lazy"
           src={pillar.image}
           alt={pillar.name}
           className="w-full h-full object-contain bg-[#1a1a1a]"
@@ -115,6 +116,7 @@ export default function PillarsSection() {
           }`}
         >
           <img
+                  loading="lazy"
             src="/images/logo/intelligent-cleaning-logo.png"
             alt="Intelligent Cleaning System"
             className="w-24 h-24 sm:w-32 sm:h-32 object-contain mx-auto mb-6 opacity-90"

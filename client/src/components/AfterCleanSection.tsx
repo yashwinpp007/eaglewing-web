@@ -75,6 +75,7 @@ export default function AfterCleanSection() {
           {/* Hero banner */}
           <div className="relative rounded-sm overflow-hidden mb-16">
             <img
+                  loading="lazy"
               src={AFTERCLEAN_HERO}
               alt="After Clean™ Hygiene Audit in progress"
               className="w-full h-64 sm:h-80 lg:h-96 object-cover"
@@ -143,6 +144,7 @@ export default function AfterCleanSection() {
               {/* ATP device image */}
               <div className="mt-6 rounded-sm overflow-hidden border border-[#4DA8DA]/10">
                 <img
+                  loading="lazy"
                   src={AFTERCLEAN_TESTING}
                   alt="ATP testing device showing PASS result"
                   className="w-full h-48 object-cover"

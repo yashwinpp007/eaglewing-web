@@ -233,6 +233,7 @@ function ServiceModal({
         {/* Hero image */}
         <div className="relative w-full aspect-[16/7] overflow-hidden">
           <img
+                  loading="lazy"
             src={service.image}
             alt={service.title}
             className="w-full h-full object-cover"
