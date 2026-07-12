@@ -204,6 +204,7 @@ export default function CTASection() {
               </div>
 
               <select
+                aria-label="Service required"
                 value={form.service}
                 onChange={(e) => setForm({ ...form, service: e.target.value })}
                 className="w-full bg-[#0A0A0A] border border-white/10 focus:border-[#C8A84E]/50 text-white px-4 py-3 text-sm font-body outline-none transition-colors appearance-none"

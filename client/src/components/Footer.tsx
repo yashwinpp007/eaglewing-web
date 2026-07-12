@@ -173,6 +173,7 @@ export default function Footer() {
               />
               <button
                 type="submit"
+                aria-label="Subscribe to newsletter"
                 className="w-10 h-10 flex items-center justify-center bg-[#C8A84E] hover:bg-[#E8D48B] text-black transition-colors"
               >
                 <Send className="w-4 h-4" />
