@@ -78,6 +78,8 @@ export default function AfterCleanSection() {
                   loading="lazy"
               src={AFTERCLEAN_HERO}
               alt="After Clean™ Hygiene Audit in progress"
+              width={1200}
+              height={500}
               className="w-full h-64 sm:h-80 lg:h-96 object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[#070B10]/90 via-[#070B10]/60 to-transparent" />
@@ -147,6 +149,8 @@ export default function AfterCleanSection() {
                   loading="lazy"
                   src={AFTERCLEAN_TESTING}
                   alt="ATP testing device showing PASS result"
+                  width={800}
+                  height={400}
                   className="w-full h-48 object-cover"
                 />
               </div>

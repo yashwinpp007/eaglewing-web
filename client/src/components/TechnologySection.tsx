@@ -154,6 +154,8 @@ function FeatureModal({
                   loading="lazy"
             src={feature.image}
             alt={feature.title}
+            width={1600}
+            height={700}
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent" />
@@ -253,8 +255,10 @@ export default function TechnologySection() {
           >
             <img
                   loading="lazy"
-              src="/images/logo/intelligent-cleaning-logo.png"
+              src="/images/logo/intelligent-cleaning-logo.webp"
               alt="Intelligent Cleaning System"
+              width={80}
+              height={80}
               className="w-16 h-16 sm:w-20 sm:h-20 object-contain mx-auto mb-4 opacity-80"
             />
             <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-[#1a1a1a] leading-[0.95] mb-6">
@@ -276,6 +280,8 @@ export default function TechnologySection() {
                   loading="lazy"
                 src={DASHBOARD_IMG}
                 alt="EagleWing Command dashboard showing real-time facility analytics"
+                width={1200}
+                height={750}
                 className="w-full h-auto"
               />
               <div className="absolute top-0 left-0 w-16 h-px bg-[#C8A84E]/60" />

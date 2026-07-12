@@ -28,6 +28,8 @@ export default function FounderSection() {
                   loading="lazy"
                   src={BRIAN_PHOTO}
                   alt="Brian Sylvester — Founder of EagleWing Facility Services"
+                  width={500}
+                  height={625}
                   className="w-full max-w-md h-auto object-cover"
                 />
                 {/* Overlay gradient at bottom */}

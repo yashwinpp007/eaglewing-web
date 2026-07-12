@@ -232,6 +232,8 @@ function CapabilityModal({
                   loading="lazy"
             src={capability.image}
             alt={capability.title}
+            width={1600}
+            height={700}
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent" />
@@ -412,7 +414,7 @@ export default function AboutSection() {
             <div className="relative flex flex-col sm:flex-row items-center justify-between gap-6">
               <div className="flex items-center gap-6 text-center sm:text-left">
                 <img
-                  loading="lazy" src={WING_LOGO} alt="EagleWing" className="w-14 h-14 object-contain hidden sm:block" />
+                  loading="lazy" src={WING_LOGO} alt="EagleWing" width={56} height={56} className="w-14 h-14 object-contain hidden sm:block" />
                 <div>
                   <span className="text-white font-display text-xl sm:text-2xl block">
                     20+ years. 500+ facilities. 98% retention.

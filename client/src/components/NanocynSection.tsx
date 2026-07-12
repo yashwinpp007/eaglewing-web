@@ -110,6 +110,8 @@ export default function NanocynSection() {
                   loading="lazy"
                   src={NANOCYN_IMG}
                   alt="Nanocyn Hospital-Grade Disinfectant & Sanitiser Product Range"
+                  width={600}
+                  height={600}
                   className="w-full h-auto object-contain relative z-10"
                 />
               </div>
@@ -142,6 +144,8 @@ export default function NanocynSection() {
                   loading="lazy"
                 src={NANOCYN_IMG}
                 alt="Nanocyn Product Range"
+                width={600}
+                height={600}
                 className="w-full h-full object-contain p-8"
               />
               <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#0A0A0A] to-transparent" />

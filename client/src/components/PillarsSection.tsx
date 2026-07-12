@@ -64,6 +64,8 @@ function PillarCard({ pillar, index }: { pillar: typeof pillars[0]; index: numbe
                   loading="lazy"
           src={pillar.image}
           alt={pillar.name}
+          width={800}
+          height={600}
           className="w-full h-full object-contain bg-[#1a1a1a]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
@@ -117,8 +119,10 @@ export default function PillarsSection() {
         >
           <img
                   loading="lazy"
-            src="/images/logo/intelligent-cleaning-logo.png"
+            src="/images/logo/intelligent-cleaning-logo.webp"
             alt="Intelligent Cleaning System"
+            width={128}
+            height={128}
             className="w-24 h-24 sm:w-32 sm:h-32 object-contain mx-auto mb-6 opacity-90"
           />
           <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-white leading-[0.95] mb-6">
